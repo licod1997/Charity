@@ -80,6 +80,7 @@ Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh 
     <style type="text/css">.fancybox-margin {
         margin-right: 17px;
     }</style>
+    <script type="text/javascript" async="" src="./Home_files/jquery-3.2.1.min.js"></script>
 </head>
 <body data-pid="422328012" data-iid="">
 
@@ -118,7 +119,7 @@ Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh 
                         <div class="nav-collapse collapse">
                             <ul class="nav" id="topMenu" data-submenu="horizontal">
                                 <c:forEach var="entry" items="${Menu}" varStatus="counter">
-                                    <li class=" <c:if test="${counter.index eq 0}"> active </c:if>">
+                                    <li class=" <c:if test="${counter.index eq 1}"> active </c:if>">
                                         <a rel="nofollow" href="${entry.url}">${entry.name}</a>
                                     </li>
                                 </c:forEach>
@@ -159,6 +160,45 @@ Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh 
                                             </dd>
                                         </c:forEach>
                                     </dl>
+                                    <ul class="pager">
+                                        <script type="text/javascript">
+                                            var currentPage = parseInt('<c:out value="${CurrentPage}"/>');
+                                            var maxPage = parseInt('<c:out value="${TotalPages}"/>');
+                                            browsePage();
+                                            function browsePage() {
+                                                if (maxPage > 4) {
+                                                    if (currentPage - 2 < 2) {
+                                                        for (var i = 1; i <= 5; i++) {
+                                                            writeHTML(i);
+                                                        }
+                                                        return;
+                                                    } else if (currentPage + 2 > maxPage - 1) {
+                                                        for (var i = maxPage - 4; i <= maxPage; i++) {
+                                                            writeHTML(i);
+                                                        }
+                                                        return;
+                                                    } else {
+                                                        for (var i = currentPage - 2; i <= currentPage + 2; i++) {
+                                                            writeHTML(i);
+                                                        }
+                                                        return;
+                                                    }
+                                                }
+                                                if (maxPage <= 4) {
+                                                    for (var i = 1; i <= maxPage; i++) {
+                                                        writeHTML(i);
+                                                    }
+                                                }
+                                            }
+                                            function writeHTML(i) {
+                                                if (i === currentPage) {
+                                                    document.write('<li><a rel="nofollow" href="news?page=' + i + '"><b>' + i + '</b></a></li>')
+                                                } else {
+                                                    document.write('<li><a rel="nofollow" href="news?page=' + i + '">' + i + '</a></li>')
+                                                }
+                                            }
+                                        </script>
+                                    </ul>
                                 </div>
                             </div>
                         </div>

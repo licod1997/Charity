@@ -118,7 +118,7 @@ Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit
                         <div class="nav-collapse collapse">
                             <ul class="nav" id="topMenu" data-submenu="horizontal">
                                 <c:forEach var="entry" items="${Menu}" varStatus="counter">
-                                    <li class=" <c:if test="${counter.index eq 3}"> active </c:if>">
+                                    <li class=" <c:if test="${counter.index eq 4}"> active </c:if>">
                                         <a rel="nofollow" href="${entry.url}">${entry.name}</a>
                                     </li>
                                 </c:forEach>

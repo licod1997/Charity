@@ -33,12 +33,20 @@ public class NewsBLO implements Serializable {
         }
     }
 
-    public List getLatestNews(int row, int page) {
+    public List getLatestNews(int page, int maxRow) {
         EntityManager em = emf.createEntityManager();
-        int limit = row * page;
-        String jpql = "select * from ( select ROW_NUMBER () OVER (ORDER BY t.CreatedDate desc) AS RowNum, t.ID, t.Name, t.Entry, t.CreatedDate from News t where t.Status = 1 ) sub where RowNum >= " + (limit - row + 1) + " and RowNum <= " + limit;
+        long limit = maxRow * page;
+        String jpql = "select * from ( select ROW_NUMBER () OVER (ORDER BY t.CreatedDate desc) AS RowNum, t.ID, t.Name, t.Entry, t.CreatedDate from News t where t.Status = 1 ) sub where RowNum >= " + (limit - maxRow + 1) + " and RowNum <= " + limit;
         Query query = em.createNativeQuery(jpql, News.class);
         return query.getResultList();
+    }
+
+    public Object getTotalNews(){
+        EntityManagerFactory emf = Persistence.createEntityManagerFactory("Charity-PU");
+        EntityManager em = emf.createEntityManager();
+        String jpql = "select count(*) from News where Status = 1";
+        Query query = em.createNativeQuery(jpql);
+        return query.getSingleResult();
     }
 
     public News getDetailNews(int id) {
