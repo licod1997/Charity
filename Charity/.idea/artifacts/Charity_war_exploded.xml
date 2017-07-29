@@ -1,0 +1,20 @@
+<component name="ArtifactManager">
+  <artifact type="exploded-war" name="Charity:war exploded">
+    <output-path>$PROJECT_DIR$/out/artifacts/Charity_war_exploded</output-path>
+    <root id="root">
+      <element id="javaee-facet-resources" facet="Charity/web/Web" />
+      <element id="directory" name="WEB-INF">
+        <element id="directory" name="classes">
+          <element id="module-output" name="Charity" />
+          <element id="jpa-descriptors" facet="Charity/jpa/JPA" />
+        </element>
+        <element id="directory" name="lib">
+          <element id="library" level="project" name="Spring-4.3.9.RELEASE" />
+          <element id="library" level="project" name="Spring MVC-4.3.9.RELEASE" />
+          <element id="library" level="project" name="EclipseLink (JPA 2.1)" />
+          <element id="library" level="application" name="JSTL 1.2.1" />
+        </element>
+      </element>
+    </root>
+  </artifact>
+</component>
