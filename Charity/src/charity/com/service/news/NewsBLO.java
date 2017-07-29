@@ -51,7 +51,7 @@ public class NewsBLO implements Serializable {
 
     public News getDetailNews(int id) {
         EntityManager em = emf.createEntityManager();
-        String jpql = "select t.ID, t.Name, t.Entry, t.CreatedDate from News t where t.Status = 1 and t.ID = " + id + " order by t.CreatedDate desc";
+        String jpql = "select t.ID, t.Name, t.Content, t.CreatedDate from News t where t.Status = 1 and t.ID = " + id;
         Query query = em.createNativeQuery(jpql, News.class);
         return (News) query.getSingleResult();
     }

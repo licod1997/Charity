@@ -80,6 +80,7 @@ Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh 
     <style type="text/css">.fancybox-margin {
         margin-right: 17px;
     }</style>
+    <script type="text/javascript" async="" src="./Home_files/jquery-3.2.1.min.js"></script>
 </head>
 <body data-pid="422328012" data-iid="">
 
@@ -118,7 +119,7 @@ Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh 
                         <div class="nav-collapse collapse">
                             <ul class="nav" id="topMenu" data-submenu="horizontal">
                                 <c:forEach var="entry" items="${Menu}" varStatus="counter">
-                                    <li class=" <c:if test="${counter.index eq 0}"> active </c:if>">
+                                    <li class=" <c:if test="${counter.index eq 1}"> active </c:if>">
                                         <a rel="nofollow" href="${entry.url}">${entry.name}</a>
                                     </li>
                                 </c:forEach>
@@ -137,31 +138,32 @@ Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh 
                 <div id="left" class="span9"> <!-- ADD "span12" if no sidebar, or "span9" with sidebar -->
                     <div class="wrapper ">
                         <div class="content">
-                            <c:forEach var="entry" items="${Home}">
-                                ${entry}
-                            </c:forEach>
                             <div class="section news">
                                 <style>    .wordwrapfix {
                                     word-wrap: break-word;
                                 }
                                 </style>
+                                <c:set var="entry" value="${NewsDetail}"/>
                                 <div class="heading wordwrapfix">
-                                    <h3>Latest News</h3>
+                                    <h3>${entry.name}</h3>
                                 </div>
 
                                 <div class="content">
-                                    <dl class="dl-horizontal">
-                                        <c:forEach items="${News}" var="entry">
-                                            <dt><span class="date-text"><fmt:formatDate value="${entry.createdDate}"
-                                                                                        pattern="dd-MMMM-yyyy"/> </span>
-                                            </dt>
-                                            <dd>
-                                                <h4><a style="text-decoration: none;" href="detail?id=${entry.id}">${entry.name}</a></h4>
+                                    <div class="section">
+                                        <div class="content">
+                                            <div class="item">
+                                                <div class="controls">
+                                                    <span class="date-text"><fmt:formatDate pattern="dd-MM-yyyy"
+                                                                                            value="${entry.createdDate}"/></span>
+                                                </div>
 
-                                                <p>${entry.entry}</p>
-                                            </dd>
-                                        </c:forEach>
-                                    </dl>
+
+                                            </div>
+                                            <div class="content">
+                                                <p><span>${entry.content}</span></p>
+                                            </div>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                         </div>

@@ -154,7 +154,7 @@ Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh 
                                                                                         pattern="dd-MMMM-yyyy"/> </span>
                                             </dt>
                                             <dd>
-                                                <h4>${entry.name}</h4>
+                                                <h4><a style="text-decoration: none;" href="detail?id=${entry.id}">${entry.name}</a></h4>
 
                                                 <p>${entry.entry}</p>
                                             </dd>
