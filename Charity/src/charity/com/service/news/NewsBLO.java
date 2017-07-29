@@ -33,17 +33,18 @@ public class NewsBLO implements Serializable {
         }
     }
 
-    public List getLatestNews(int row) {
+    public List getLatestNews(int row, int page) {
         EntityManager em = emf.createEntityManager();
-        String jpql = "select top " + row + " t.ID, t.Name, t.Entry, t.CreatedDate from News t where t.Status = 1 order by t.CreatedDate desc";
+        int limit = row * page;
+        String jpql = "select * from ( select ROW_NUMBER () OVER (ORDER BY t.CreatedDate desc) AS RowNum, t.ID, t.Name, t.Entry, t.CreatedDate from News t where t.Status = 1 ) sub where RowNum >= " + (limit - row + 1) + " and RowNum <= " + limit;
         Query query = em.createNativeQuery(jpql, News.class);
         return query.getResultList();
     }
 
     public News getDetailNews(int id) {
         EntityManager em = emf.createEntityManager();
-        String jpql = "select t.Name, t.Entry, t.CreatedDate from News t where t.Status = 1 and t.ID = " + id + " order by t.CreatedDate desc";
+        String jpql = "select t.ID, t.Name, t.Entry, t.CreatedDate from News t where t.Status = 1 and t.ID = " + id + " order by t.CreatedDate desc";
         Query query = em.createNativeQuery(jpql, News.class);
-        return (News)query.getSingleResult();
+        return (News) query.getSingleResult();
     }
 }
