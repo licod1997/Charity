@@ -9,11 +9,13 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
+import java.util.Map;
 
 /**
  * Created by Notebook on 27-Jul-17.
@@ -108,10 +110,15 @@ public class LoadPageController {
     }
 
     @RequestMapping(value = "/news", method = RequestMethod.GET)
-    protected ModelAndView ShowOverview(HttpServletRequest request, HttpServletResponse response) {
+    protected ModelAndView ShowOverview(HttpServletRequest request, HttpServletResponse response, @RequestParam Map<String, String> requestPram) {
         ModelAndView model = new ModelAndView("news");
         model.addObject("Menu", menusBLO.getMenu());
-//        model.addObject("News", newsBLO.getLatestNews(1));
+        int page = 1;
+        try {
+            page = Integer.parseInt(requestPram.get("page"));
+        } catch (Exception e){
+        }
+        model.addObject("News", newsBLO.getLatestNews(10, page));
         HttpSession session = request.getSession(false);
         if (session == null){
             session = request.getSession(true);
