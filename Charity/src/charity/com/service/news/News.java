@@ -26,7 +26,7 @@ public class News implements Serializable {
     private String name;
     @Column(name = "Entry", nullable = true, length = 256)
     private String entry;
-    @Column(name = "content", nullable = true, length = 2147483647)
+    @Column(name = "Content", nullable = true, length = 2147483647)
     private String content;
     @Column(name = "CreatedDate", nullable = true)
     @Temporal(TemporalType.TIMESTAMP)
