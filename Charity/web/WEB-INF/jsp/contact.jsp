@@ -16,7 +16,7 @@
     <style type="text/css">.gm-style .gm-style-mtc label, .gm-style .gm-style-mtc div {
         font-weight: 400
     }</style>
-    <link type="text/css" rel="stylesheet" href="./Contact_files/css">
+    <link type="text/css" rel="stylesheet" href="/resources/Contact_files/css">
     <style type="text/css">.gm-style .gm-style-cc span, .gm-style .gm-style-cc a, .gm-style .gm-style-mtc div {
         font-size: 10px
     }</style>
@@ -56,7 +56,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="description" content="Children&#39;s Charity - http://us-123charity.simplesite.com/">
-    <link rel="stylesheet" type="text/css" href="./Contact_files/9767413.design.v27169.css">
+    <link rel="stylesheet" type="text/css" href="/resources/Contact_files/9767413.design.v27169.css">
     <link rel="canonical" href="http://us-123charity.simplesite.com/422328016">
     <link rel="apple-touch-icon" sizes="57x57" href="http://us-123charity.simplesite.com/apple-touch-icon-57x57.png">
     <link rel="apple-touch-icon" sizes="60x60" href="http://us-123charity.simplesite.com/apple-touch-icon-60x60.png">
@@ -76,9 +76,9 @@
     <link rel="icon" sizes="192x192" href="http://us-123charity.simplesite.com/android-chrome-192x192.png">
     <link rel="manifest" href="http://us-123charity.simplesite.com/manifest.json">
     <link rel="manifest" href="http://us-123charity.simplesite.com/yandex-browser-manifest.json">
-    <script type="text/javascript" async="" src="./Contact_files/analytics.js.download"></script>
-    <script async="" src="./Contact_files/gtm.js.download"></script>
-    <script type="text/javascript" src="./Contact_files/FrontendAppLocalePage.aspx"></script>
+    <script type="text/javascript" async="" src="/resources/Contact_files/analytics.js.download"></script>
+    <script async="" src="/resources/Contact_files/gtm.js.download"></script>
+    <script type="text/javascript" src="/resources/Contact_files/FrontendAppLocalePage.aspx"></script>
     <script type="text/javascript">if (typeof window.jQuery == "undefined") {
         (function () {
             var a = document.createElement("script");
@@ -104,17 +104,17 @@
     <style type="text/css">.fancybox-margin {
         margin-right: 17px;
     }</style>
-    <script type="text/javascript" charset="UTF-8" src="./Contact_files/common.js.download"></script>
-    <script type="text/javascript" charset="UTF-8" src="./Contact_files/map.js.download"></script>
-    <script type="text/javascript" charset="UTF-8" src="./Contact_files/util.js.download"></script>
-    <script type="text/javascript" charset="UTF-8" src="./Contact_files/marker.js.download"></script>
-    <script type="text/javascript" charset="UTF-8" src="./Contact_files/infowindow.js.download"></script>
-    <script type="text/javascript" charset="UTF-8" src="./Contact_files/onion.js.download"></script>
-    <script type="text/javascript" charset="UTF-8" src="./Contact_files/ViewportInfoService.GetViewportInfo"></script>
-    <script type="text/javascript" charset="UTF-8" src="./Contact_files/stats.js.download"></script>
-    <script type="text/javascript" charset="UTF-8" src="./Contact_files/controls.js.download"></script>
-    <script type="text/javascript" charset="UTF-8" src="./Contact_files/vt"></script>
-    <script type="text/javascript" charset="UTF-8" src="./Contact_files/AuthenticationService.Authenticate"></script>
+    <script type="text/javascript" charset="UTF-8" src="/resources/Contact_files/common.js.download"></script>
+    <script type="text/javascript" charset="UTF-8" src="/resources/Contact_files/map.js.download"></script>
+    <script type="text/javascript" charset="UTF-8" src="/resources/Contact_files/util.js.download"></script>
+    <script type="text/javascript" charset="UTF-8" src="/resources/Contact_files/marker.js.download"></script>
+    <script type="text/javascript" charset="UTF-8" src="/resources/Contact_files/infowindow.js.download"></script>
+    <script type="text/javascript" charset="UTF-8" src="/resources/Contact_files/onion.js.download"></script>
+    <script type="text/javascript" charset="UTF-8" src="/resources/Contact_files/ViewportInfoService.GetViewportInfo"></script>
+    <script type="text/javascript" charset="UTF-8" src="/resources/Contact_files/stats.js.download"></script>
+    <script type="text/javascript" charset="UTF-8" src="/resources/Contact_files/controls.js.download"></script>
+    <script type="text/javascript" charset="UTF-8" src="/resources/Contact_files/vt"></script>
+    <script type="text/javascript" charset="UTF-8" src="/resources/Contact_files/AuthenticationService.Authenticate"></script>
 </head>
 <body data-pid="422328016" data-iid="">
 
@@ -246,62 +246,62 @@
                                                                 <div aria-hidden="true"
                                                                      style="position: absolute; left: 0px; top: 0px; z-index: 1; visibility: inherit;">
                                                                     <div style="position: absolute; left: 174px; top: 40px; transition: opacity 200ms ease-out;">
-                                                                        <img src="./Contact_files/vt(1)"
+                                                                        <img src="/resources/Contact_files/vt(1)"
                                                                              draggable="false" alt=""
                                                                              style="width: 256px; height: 256px; user-select: none; border: 0px; padding: 0px; margin: 0px; max-width: none;">
                                                                     </div>
                                                                     <div style="position: absolute; left: -82px; top: 40px; transition: opacity 200ms ease-out;">
-                                                                        <img src="./Contact_files/vt(2)"
+                                                                        <img src="/resources/Contact_files/vt(2)"
                                                                              draggable="false" alt=""
                                                                              style="width: 256px; height: 256px; user-select: none; border: 0px; padding: 0px; margin: 0px; max-width: none;">
                                                                     </div>
                                                                     <div style="position: absolute; left: 430px; top: -216px; transition: opacity 200ms ease-out;">
-                                                                        <img src="./Contact_files/vt(3)"
+                                                                        <img src="/resources/Contact_files/vt(3)"
                                                                              draggable="false" alt=""
                                                                              style="width: 256px; height: 256px; user-select: none; border: 0px; padding: 0px; margin: 0px; max-width: none;">
                                                                     </div>
                                                                     <div style="position: absolute; left: 174px; top: 296px; transition: opacity 200ms ease-out;">
-                                                                        <img src="./Contact_files/vt(4)"
+                                                                        <img src="/resources/Contact_files/vt(4)"
                                                                              draggable="false" alt=""
                                                                              style="width: 256px; height: 256px; user-select: none; border: 0px; padding: 0px; margin: 0px; max-width: none;">
                                                                     </div>
                                                                     <div style="position: absolute; left: 430px; top: 40px; transition: opacity 200ms ease-out;">
-                                                                        <img src="./Contact_files/vt(5)"
+                                                                        <img src="/resources/Contact_files/vt(5)"
                                                                              draggable="false" alt=""
                                                                              style="width: 256px; height: 256px; user-select: none; border: 0px; padding: 0px; margin: 0px; max-width: none;">
                                                                     </div>
                                                                     <div style="position: absolute; left: -82px; top: 296px; transition: opacity 200ms ease-out;">
-                                                                        <img src="./Contact_files/vt(6)"
+                                                                        <img src="/resources/Contact_files/vt(6)"
                                                                              draggable="false" alt=""
                                                                              style="width: 256px; height: 256px; user-select: none; border: 0px; padding: 0px; margin: 0px; max-width: none;">
                                                                     </div>
                                                                     <div style="position: absolute; left: 174px; top: -216px; transition: opacity 200ms ease-out;">
-                                                                        <img src="./Contact_files/vt(7)"
+                                                                        <img src="/resources/Contact_files/vt(7)"
                                                                              draggable="false" alt=""
                                                                              style="width: 256px; height: 256px; user-select: none; border: 0px; padding: 0px; margin: 0px; max-width: none;">
                                                                     </div>
                                                                     <div style="position: absolute; left: 686px; top: 40px; transition: opacity 200ms ease-out;">
-                                                                        <img src="./Contact_files/vt(8)"
+                                                                        <img src="/resources/Contact_files/vt(8)"
                                                                              draggable="false" alt=""
                                                                              style="width: 256px; height: 256px; user-select: none; border: 0px; padding: 0px; margin: 0px; max-width: none;">
                                                                     </div>
                                                                     <div style="position: absolute; left: 430px; top: 296px; transition: opacity 200ms ease-out;">
-                                                                        <img src="./Contact_files/vt(9)"
+                                                                        <img src="/resources/Contact_files/vt(9)"
                                                                              draggable="false" alt=""
                                                                              style="width: 256px; height: 256px; user-select: none; border: 0px; padding: 0px; margin: 0px; max-width: none;">
                                                                     </div>
                                                                     <div style="position: absolute; left: -82px; top: -216px; transition: opacity 200ms ease-out;">
-                                                                        <img src="./Contact_files/vt(10)"
+                                                                        <img src="/resources/Contact_files/vt(10)"
                                                                              draggable="false" alt=""
                                                                              style="width: 256px; height: 256px; user-select: none; border: 0px; padding: 0px; margin: 0px; max-width: none;">
                                                                     </div>
                                                                     <div style="position: absolute; left: 686px; top: -216px; transition: opacity 200ms ease-out;">
-                                                                        <img src="./Contact_files/vt(11)"
+                                                                        <img src="/resources/Contact_files/vt(11)"
                                                                              draggable="false" alt=""
                                                                              style="width: 256px; height: 256px; user-select: none; border: 0px; padding: 0px; margin: 0px; max-width: none;">
                                                                     </div>
                                                                     <div style="position: absolute; left: 686px; top: 296px; transition: opacity 200ms ease-out;">
-                                                                        <img src="./Contact_files/vt(12)"
+                                                                        <img src="/resources/Contact_files/vt(12)"
                                                                              draggable="false" alt=""
                                                                              style="width: 256px; height: 256px; user-select: none; border: 0px; padding: 0px; margin: 0px; max-width: none;">
                                                                     </div>
@@ -323,7 +323,7 @@
                                                            title="Click to see this area on Google Maps"
                                                            style="position: static; overflow: visible; float: none; display: inline;">
                                                             <div style="width: 66px; height: 26px; cursor: pointer;">
-                                                                <img src="./Contact_files/google4.png" draggable="false"
+                                                                <img src="/resources/Contact_files/google4.png" draggable="false"
                                                                      style="position: absolute; left: 0px; top: 0px; width: 66px; height: 26px; user-select: none; border: 0px; padding: 0px; margin: 0px;">
                                                             </div>
                                                         </a></div>
@@ -334,7 +334,7 @@
                                                             (©2009), Google
                                                         </div>
                                                         <div style="width: 13px; height: 13px; overflow: hidden; position: absolute; opacity: 0.7; right: 12px; top: 12px; z-index: 10000; cursor: pointer;">
-                                                            <img src="./Contact_files/mapcnt6.png" draggable="false"
+                                                            <img src="/resources/Contact_files/mapcnt6.png" draggable="false"
                                                                  style="position: absolute; left: -2px; top: -336px; width: 59px; height: 492px; user-select: none; border: 0px; padding: 0px; margin: 0px; max-width: none;">
                                                         </div>
                                                     </div>
@@ -371,7 +371,7 @@
                                                                 of Use</a></div>
                                                     </div>
                                                     <div style="width: 25px; height: 25px; overflow: hidden; display: none; margin: 10px 14px; position: absolute; top: 0px; right: 0px;">
-                                                        <img src="./Contact_files/sv9.png" draggable="false"
+                                                        <img src="/resources/Contact_files/sv9.png" draggable="false"
                                                              class="gm-fullscreen-control"
                                                              style="position: absolute; left: -52px; top: -86px; width: 164px; height: 175px; user-select: none; border: 0px; padding: 0px; margin: 0px;">
                                                     </div>
@@ -398,7 +398,7 @@
                                                                 <div title="Zoom in"
                                                                      style="position: relative; width: 28px; height: 27px; left: 0px; top: 0px;">
                                                                     <div style="overflow: hidden; position: absolute; width: 15px; height: 15px; left: 7px; top: 6px;">
-                                                                        <img src="./Contact_files/tmapctrl.png"
+                                                                        <img src="/resources/Contact_files/tmapctrl.png"
                                                                              draggable="false"
                                                                              style="position: absolute; left: 0px; top: 0px; user-select: none; border: 0px; padding: 0px; margin: 0px; max-width: none; width: 120px; height: 54px;">
                                                                     </div>
@@ -407,7 +407,7 @@
                                                                 <div title="Zoom out"
                                                                      style="position: relative; width: 28px; height: 27px; left: 0px; top: 0px;">
                                                                     <div style="overflow: hidden; position: absolute; width: 15px; height: 15px; left: 7px; top: 6px;">
-                                                                        <img src="./Contact_files/tmapctrl.png"
+                                                                        <img src="/resources/Contact_files/tmapctrl.png"
                                                                              draggable="false"
                                                                              style="position: absolute; left: 0px; top: -15px; user-select: none; border: 0px; padding: 0px; margin: 0px; max-width: none; width: 120px; height: 54px;">
                                                                     </div>
@@ -420,19 +420,19 @@
                                                             <div style="position: absolute; left: 1px; top: 1px;">
                                                                 <div aria-label="Street View Pegman Control"
                                                                      style="width: 26px; height: 26px; overflow: hidden; position: absolute; left: 0px; top: 0px;">
-                                                                    <img src="./Contact_files/cb_scout5.png"
+                                                                    <img src="/resources/Contact_files/cb_scout5.png"
                                                                          draggable="false"
                                                                          style="position: absolute; left: -147px; top: -26px; width: 215px; height: 835px; user-select: none; border: 0px; padding: 0px; margin: 0px; max-width: none;">
                                                                 </div>
                                                                 <div aria-label="Pegman is on top of the Map"
                                                                      style="width: 26px; height: 26px; overflow: hidden; position: absolute; left: 0px; top: 0px; visibility: hidden;">
-                                                                    <img src="./Contact_files/cb_scout5.png"
+                                                                    <img src="/resources/Contact_files/cb_scout5.png"
                                                                          draggable="false"
                                                                          style="position: absolute; left: -147px; top: -52px; width: 215px; height: 835px; user-select: none; border: 0px; padding: 0px; margin: 0px; max-width: none;">
                                                                 </div>
                                                                 <div aria-label="Street View Pegman Control"
                                                                      style="width: 26px; height: 26px; overflow: hidden; position: absolute; left: 0px; top: 0px; visibility: hidden;">
-                                                                    <img src="./Contact_files/cb_scout5.png"
+                                                                    <img src="/resources/Contact_files/cb_scout5.png"
                                                                          draggable="false"
                                                                          style="position: absolute; left: -147px; top: -78px; width: 215px; height: 835px; user-select: none; border: 0px; padding: 0px; margin: 0px; max-width: none;">
                                                                 </div>
@@ -442,13 +442,13 @@
                                                              style="display: none; position: absolute;">
                                                             <div title="Rotate map 90 degrees"
                                                                  style="width: 28px; height: 28px; overflow: hidden; position: absolute; border-radius: 2px; box-shadow: rgba(0, 0, 0, 0.298039) 0px 1px 4px -1px; cursor: pointer; background-color: rgb(255, 255, 255); display: none;">
-                                                                <img src="./Contact_files/tmapctrl4.png"
+                                                                <img src="/resources/Contact_files/tmapctrl4.png"
                                                                      draggable="false"
                                                                      style="position: absolute; left: -141px; top: 6px; width: 170px; height: 54px; user-select: none; border: 0px; padding: 0px; margin: 0px; max-width: none;">
                                                             </div>
                                                             <div class="gm-tilt"
                                                                  style="width: 28px; height: 28px; overflow: hidden; position: absolute; border-radius: 2px; box-shadow: rgba(0, 0, 0, 0.298039) 0px 1px 4px -1px; top: 0px; cursor: pointer; background-color: rgb(255, 255, 255);">
-                                                                <img src="./Contact_files/tmapctrl4.png"
+                                                                <img src="/resources/Contact_files/tmapctrl4.png"
                                                                      draggable="false"
                                                                      style="position: absolute; left: -141px; top: -13px; width: 170px; height: 54px; user-select: none; border: 0px; padding: 0px; margin: 0px; max-width: none;">
                                                             </div>
@@ -468,7 +468,7 @@
                                                                     <span role="checkbox"
                                                                           style="box-sizing: border-box; position: relative; line-height: 0; font-size: 0px; margin: 0px 5px 0px 0px; display: inline-block; background-color: rgb(255, 255, 255); border: 1px solid rgb(198, 198, 198); border-radius: 1px; width: 13px; height: 13px; vertical-align: middle;"><div
                                                                             style="position: absolute; left: 1px; top: -2px; width: 13px; height: 11px; overflow: hidden; display: none;"><img
-                                                                            src="./Contact_files/imgs8.png"
+                                                                            src="/resources/Contact_files/imgs8.png"
                                                                             draggable="false"
                                                                             style="position: absolute; left: -52px; top: -44px; user-select: none; border: 0px; padding: 0px; margin: 0px; max-width: none; width: 68px; height: 67px;"></div></span><label
                                                                         style="vertical-align: middle; cursor: pointer;">Terrain</label>
@@ -487,7 +487,7 @@
                                                                     <span role="checkbox"
                                                                           style="box-sizing: border-box; position: relative; line-height: 0; font-size: 0px; margin: 0px 5px 0px 0px; display: inline-block; background-color: rgb(255, 255, 255); border: 1px solid rgb(198, 198, 198); border-radius: 1px; width: 13px; height: 13px; vertical-align: middle;"><div
                                                                             style="position: absolute; left: 1px; top: -2px; width: 13px; height: 11px; overflow: hidden;"><img
-                                                                            src="./Contact_files/imgs8.png"
+                                                                            src="/resources/Contact_files/imgs8.png"
                                                                             draggable="false"
                                                                             style="position: absolute; left: -52px; top: -44px; user-select: none; border: 0px; padding: 0px; margin: 0px; max-width: none; width: 68px; height: 67px;"></div></span><label
                                                                         style="vertical-align: middle; cursor: pointer;">Labels</label>
@@ -624,9 +624,9 @@
 <div style="display: none; visibility: hidden;">
     <script type="text/javascript">var google_conversion_id = 1066686464,
         google_custom_params = window.google_tag_params, google_remarketing_only = !0;</script>
-    <script type="text/javascript" src="./Contact_files/conversion.js.download"></script>
+    <script type="text/javascript" src="/resources/Contact_files/conversion.js.download"></script>
     <iframe name="google_conversion_frame" title="Google conversion frame" width="300" height="13"
-            src="./Contact_files/saved_resource.html" frameborder="0" marginwidth="0" marginheight="0" vspace="0"
+            src="/resources/Contact_files/saved_resource.html" frameborder="0" marginwidth="0" marginheight="0" vspace="0"
             hspace="0" allowtransparency="true" scrolling="no"></iframe>
     <noscript></noscript>
 </div>

@@ -42,7 +42,6 @@ public class NewsBLO implements Serializable {
     }
 
     public Object getTotalNews(){
-        EntityManagerFactory emf = Persistence.createEntityManagerFactory("Charity-PU");
         EntityManager em = emf.createEntityManager();
         String jpql = "select count(*) from News where Status = 1";
         Query query = em.createNativeQuery(jpql);
@@ -51,7 +50,7 @@ public class NewsBLO implements Serializable {
 
     public News getDetailNews(int id) {
         EntityManager em = emf.createEntityManager();
-        String jpql = "select t.ID, t.Name, t.Content, t.CreatedDate from News t where t.Status = 1 and t.ID = " + id;
+        String jpql = "select t.ID, t.Name, t.Content, t.CreatedDate from News t where t.ID = " + id + " and t.Status = 1";
         Query query = em.createNativeQuery(jpql, News.class);
         return (News) query.getSingleResult();
     }

@@ -31,7 +31,7 @@ Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh 
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="description" content="Children&#39;s Charity - http://us-123charity.simplesite.com/">
-    <link rel="stylesheet" type="text/css" href="./About Our School_files/9767413.design.v27169.css">
+    <link rel="stylesheet" type="text/css" href="/resources/About Our School_files/9767413.design.v27169.css">
     <link rel="canonical" href="http://us-123charity.simplesite.com/422328013">
     <link rel="apple-touch-icon" sizes="57x57" href="http://us-123charity.simplesite.com/apple-touch-icon-57x57.png">
     <link rel="apple-touch-icon" sizes="60x60" href="http://us-123charity.simplesite.com/apple-touch-icon-60x60.png">
@@ -51,9 +51,9 @@ Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh 
     <link rel="icon" sizes="192x192" href="http://us-123charity.simplesite.com/android-chrome-192x192.png">
     <link rel="manifest" href="http://us-123charity.simplesite.com/manifest.json">
     <link rel="manifest" href="http://us-123charity.simplesite.com/yandex-browser-manifest.json">
-    <script type="text/javascript" async="" src="./About Our School_files/analytics.js.download"></script>
-    <script async="" src="./About Our School_files/gtm.js.download"></script>
-    <script type="text/javascript" src="./About Our School_files/FrontendAppLocalePage.aspx"></script>
+    <script type="text/javascript" async="" src="/resources/About Our School_files/analytics.js.download"></script>
+    <script async="" src="/resources/About Our School_files/gtm.js.download"></script>
+    <script type="text/javascript" src="/resources/About Our School_files/FrontendAppLocalePage.aspx"></script>
     <script type="text/javascript">if (typeof window.jQuery == "undefined") {
         (function () {
             var a = document.createElement("script");
@@ -263,9 +263,9 @@ Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh 
 <div style="display: none; visibility: hidden;">
     <script type="text/javascript">var google_conversion_id = 1066686464,
         google_custom_params = window.google_tag_params, google_remarketing_only = !0;</script>
-    <script type="text/javascript" src="./About Our School_files/conversion.js.download"></script>
+    <script type="text/javascript" src="/resources/About Our School_files/conversion.js.download"></script>
     <iframe name="google_conversion_frame" title="Google conversion frame" width="300" height="13"
-            src="./About Our School_files/saved_resource.html" frameborder="0" marginwidth="0" marginheight="0"
+            src="/resources/About Our School_files/saved_resource.html" frameborder="0" marginwidth="0" marginheight="0"
             vspace="0" hspace="0" allowtransparency="true" scrolling="no"></iframe>
     <noscript></noscript>
 </div>

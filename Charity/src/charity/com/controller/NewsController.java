@@ -1,6 +1,7 @@
 package charity.com.controller;
 
 import charity.com.service.menus.MenusBLO;
+import charity.com.service.news.News;
 import charity.com.service.news.NewsBLO;
 import charity.com.service.pages.PagesBLO;
 import charity.com.service.photos.PhotosBLO;
@@ -66,6 +67,10 @@ public class NewsController {
     protected ModelAndView ShowNewsDetail(HttpServletRequest request, HttpServletResponse response, @PathVariable("id") Integer id) {
         ModelAndView model = new ModelAndView("detail");
         model.addObject("Menu", menusBLO.getMenu());
+        News news = newsBLO.getDetailNews(id);
+        String name = news.getName();
+        String content = news.getContent();
+
         model.addObject("NewsDetail", newsBLO.getDetailNews(id));
         HttpSession session = request.getSession(false);
         if (session == null) {

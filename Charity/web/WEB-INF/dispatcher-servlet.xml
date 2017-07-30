@@ -21,8 +21,9 @@
     <bean class="org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter"/>
     <bean class="org.springframework.web.servlet.mvc.support.ControllerBeanNameHandlerMapping"/>
 
-    <mvc:resources mapping="/resources/**" location="/WEB-INF/resources/" cache-period="5000"/>
-
+    <mvc:resources mapping="/resources/**" location="/resources/" cache-period="5000"/>
+    <mvc:default-servlet-handler />
+    <mvc:annotation-driven />
     <bean id="viewResolver"
           class="org.springframework.web.servlet.view.InternalResourceViewResolver"
           p:prefix="/WEB-INF/jsp/"

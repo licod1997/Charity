@@ -11,15 +11,12 @@ import javax.persistence.*;
 import javax.xml.bind.annotation.XmlRootElement;
 
 /**
- *
  * @author Notebook
  */
 @Entity
 @Table(name = "News", catalog = "Charity", schema = "dbo")
 @XmlRootElement
 public class News implements Serializable {
-
-    private static final long serialVersionUID = 1L;
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "ID", nullable = false)
@@ -27,26 +24,17 @@ public class News implements Serializable {
     @Basic(optional = false)
     @Column(name = "Name", nullable = false, length = 256)
     private String name;
-    @Column(name = "Entry", length = 256)
+    @Column(name = "Entry", nullable = true, length = 256)
     private String entry;
-    @Column(name = "Content", length = 1073741823)
+    @Column(name = "content", nullable = true, length = 2147483647)
     private String content;
-    @Column(name = "CreatedDate")
+    @Column(name = "CreatedDate", nullable = true)
     @Temporal(TemporalType.TIMESTAMP)
     private Date createdDate;
-    @Column(name = "Status")
+    @Column(name = "Status", nullable = true)
     private Boolean status;
 
     public News() {
-    }
-
-    public News(Integer id) {
-        this.id = id;
-    }
-
-    public News(Integer id, String name) {
-        this.id = id;
-        this.name = name;
     }
 
     public Integer getId() {
