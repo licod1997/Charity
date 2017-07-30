@@ -21,7 +21,7 @@
     <bean class="org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter"/>
     <bean class="org.springframework.web.servlet.mvc.support.ControllerBeanNameHandlerMapping"/>
 
-    <mvc:resources mapping="/**" location="/WEB-INF/resources/" cache-period="5000"/>
+    <mvc:resources mapping="/resources/**" location="/WEB-INF/resources/" cache-period="5000"/>
 
     <bean id="viewResolver"
           class="org.springframework.web.servlet.view.InternalResourceViewResolver"
