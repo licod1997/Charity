@@ -68,10 +68,8 @@ public class NewsController {
     protected ModelAndView ShowNewsDetail(HttpServletRequest request, HttpServletResponse response, @PathVariable("id") Integer id) {
         ModelAndView model = new ModelAndView("detail");
         model.addObject("Menu", menusBLO.getMenu());
-        News news = newsBLO.getDetailNews(id);
-        String toStr = news.toString();
-
         model.addObject("NewsDetail", newsBLO.getDetailNews(id));
+        String tmp = newsBLO.getDetailNews(id).toString();
         HttpSession session = request.getSession(false);
         if (session == null) {
             session = request.getSession(true);

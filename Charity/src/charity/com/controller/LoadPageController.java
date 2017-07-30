@@ -8,6 +8,7 @@ import charity.com.service.photos.PhotosBLO;
 import charity.com.service.visitorcounter.VisitorCounterBLO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -35,78 +36,62 @@ public class LoadPageController {
     @Autowired
     PhotosBLO photosBLO;
 
-    @RequestMapping(value = "/home")
-    protected ModelAndView ShowHome(HttpServletRequest request, HttpServletResponse response) {
-        ModelAndView model = new ModelAndView("/home");
-        model.addObject("Menu", menusBLO.getMenu());
-        model.addObject("Home", pageBLO.getContent("Home"));
-        model.addObject("News", newsBLO.getLatestNews(1, 2));
+    private void viewCount(HttpServletRequest request){
         HttpSession session = request.getSession(false);
         if (session == null) {
             session = request.getSession(true);
             session.setMaxInactiveInterval(20 * 60);
             visitorCounterBLO.update();
         }
+    }
+
+    @GetMapping(value = "/home")
+    protected ModelAndView doGet_home(HttpServletRequest request, ModelAndView model) {
+        model.setViewName("/home");
+        viewCount(request);
+        model.addObject("Menu", menusBLO.getMenu());
+        model.addObject("Home", pageBLO.getContent("Home"));
+        model.addObject("News", newsBLO.getLatestNews(1, 2));
         model.addObject("Counter", visitorCounterBLO.getCounter());
         return model;
     }
 
     @RequestMapping(value = "/about")
-    protected ModelAndView ShowAbout(HttpServletRequest request, HttpServletResponse response) {
-        ModelAndView model = new ModelAndView("/about");
+    protected ModelAndView doGet_about(HttpServletRequest request, ModelAndView model) {
+        model.setViewName("/about");
+        viewCount(request);
         model.addObject("Menu", menusBLO.getMenu());
         model.addObject("About", pageBLO.getContent("About"));
-        HttpSession session = request.getSession(false);
-        if (session == null) {
-            session = request.getSession(true);
-            session.setMaxInactiveInterval(20 * 60);
-            visitorCounterBLO.update();
-        }
         model.addObject("Counter", visitorCounterBLO.getCounter());
         return model;
     }
 
     @RequestMapping(value = "/photo")
-    protected ModelAndView ShowPhoto(HttpServletRequest request, HttpServletResponse response) {
-        ModelAndView model = new ModelAndView("/photo");
+    protected ModelAndView doGet_photo(HttpServletRequest request, ModelAndView model) {
+        model.setViewName("/photo");
+        viewCount(request);
         model.addObject("Menu", menusBLO.getMenu());
         model.addObject("Photo", photosBLO.getNewestPhotos());
-        HttpSession session = request.getSession(false);
-        if (session == null) {
-            session = request.getSession(true);
-            session.setMaxInactiveInterval(20 * 60);
-            visitorCounterBLO.update();
-        }
         model.addObject("Counter", visitorCounterBLO.getCounter());
         return model;
     }
 
     @RequestMapping(value = "/help")
-    protected ModelAndView ShowHelp(HttpServletRequest request, HttpServletResponse response) {
-        ModelAndView model = new ModelAndView("/help");
+    protected ModelAndView doGet_help(HttpServletRequest request, ModelAndView model) {
+        model.setViewName("/help");
+        viewCount(request);
         model.addObject("Menu", menusBLO.getMenu());
         model.addObject("Help", pageBLO.getContent("Help"));
-        HttpSession session = request.getSession(false);
-        if (session == null) {
-            session = request.getSession(true);
-            session.setMaxInactiveInterval(20 * 60);
-            visitorCounterBLO.update();
-        }
         model.addObject("Counter", visitorCounterBLO.getCounter());
         return model;
     }
 
     @RequestMapping(value = "/contact")
-    protected ModelAndView ShowContact(HttpServletRequest request, HttpServletResponse response) {
-        ModelAndView model = new ModelAndView("/contact");
+    protected ModelAndView doGet_contact(HttpServletRequest request, ModelAndView model) {
+        model.setViewName("/contact");
+        viewCount(request);
         model.addObject("Menu", menusBLO.getMenu());
         model.addObject("Contact", pageBLO.getContent("Contact"));
-        HttpSession session = request.getSession(false);
-        if (session == null) {
-            session = request.getSession(true);
-            session.setMaxInactiveInterval(20 * 60);
-            visitorCounterBLO.update();
-        }
         model.addObject("Counter", visitorCounterBLO.getCounter());
         return model;
     }

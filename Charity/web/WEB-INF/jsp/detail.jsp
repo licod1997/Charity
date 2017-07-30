@@ -153,14 +153,14 @@ Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh 
                                         <div class="content">
                                             <div class="blog-post-body section">
                                                 <div class="controls">
-                                                    <span class="date-text"><fmt:formatDate pattern="dd-MM-yyyy" value="${entry.createdDate}"/></span>
+                                                    <span class="date-text"><fmt:formatDate pattern="dd-MMMM-yyyy" value="${entry.createdDate}"/></span>
                                                 </div>
                                                 <div class="heading">
-                                                    <h1 class="page-title">${entry.name}</h1>
+                                                    <br/>
                                                 </div>
 
                                                 <div class="content">
-                                                    <p>${entry.contents}</p>
+                                                    <p>${entry.content}</p>
                                                 </div>
                                             </div>
                                         </div>
