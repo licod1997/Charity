@@ -12,7 +12,7 @@ import java.util.Date;
 @Entity
 @Table(name = "Pages", schema = "dbo", catalog = "Charity")
 @Service
-public class Pages implements Serializable{
+public class Pages implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "ID", nullable = false)
@@ -29,6 +29,9 @@ public class Pages implements Serializable{
     private Date createdDate;
     @Column(name = "Status", nullable = true)
     private Boolean status;
+
+    public Pages() {
+    }
 
     public int getId() {
         return id;
@@ -83,16 +86,14 @@ public class Pages implements Serializable{
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
 
-        Pages that = (Pages) o;
+        Pages pages = (Pages) o;
 
-        if (id != that.id) return false;
-        if (name != null ? !name.equals(that.name) : that.name != null) return false;
-        if (content != null ? !content.equals(that.content) : that.content != null) return false;
-        if (displayOrder != null ? !displayOrder.equals(that.displayOrder) : that.displayOrder != null) return false;
-        if (createdDate != null ? !createdDate.equals(that.createdDate) : that.createdDate != null) return false;
-        if (status != null ? !status.equals(that.status) : that.status != null) return false;
-
-        return true;
+        if (id != pages.id) return false;
+        if (name != null ? !name.equals(pages.name) : pages.name != null) return false;
+        if (content != null ? !content.equals(pages.content) : pages.content != null) return false;
+        if (displayOrder != null ? !displayOrder.equals(pages.displayOrder) : pages.displayOrder != null) return false;
+        if (createdDate != null ? !createdDate.equals(pages.createdDate) : pages.createdDate != null) return false;
+        return status != null ? status.equals(pages.status) : pages.status == null;
     }
 
     @Override

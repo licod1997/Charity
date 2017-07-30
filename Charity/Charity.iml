@@ -16,7 +16,7 @@
         <setting name="validation-enabled" value="true" />
         <setting name="provider-name" value="EclipseLink" />
         <datasource-mapping>
-          <factory-entry name="Charity-PU" />
+          <factory-entry name="Charity-PU" value="49ac799d-7da5-411c-b9e8-bd9dc4fe62fc" />
           <factory-entry name="NewPersistenceUnit" value="49ac799d-7da5-411c-b9e8-bd9dc4fe62fc" />
         </datasource-mapping>
         <deploymentDescriptor name="persistence.xml" url="file://$MODULE_DIR$/src/META-INF/persistence.xml" />

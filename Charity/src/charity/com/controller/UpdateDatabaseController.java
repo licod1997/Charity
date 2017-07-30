@@ -22,7 +22,7 @@ public class UpdateDatabaseController {
     @Autowired
     MessagesBLO messagesBLO;
 
-    @RequestMapping(value = "/message", method = RequestMethod.GET)
+    @RequestMapping(value = "/message")
     protected ModelAndView InsertMessage(@RequestParam Map<String, String> requestParams) {
         ModelAndView model = new ModelAndView("forward:/help");
         String name = requestParams.get("author[name]");

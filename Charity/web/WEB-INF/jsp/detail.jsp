@@ -160,7 +160,7 @@ Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh 
                                                 </div>
 
                                                 <div class="content">
-                                                    <p>${entry.content}</p>
+                                                    <p>${entry.contents}</p>
                                                 </div>
                                             </div>
                                         </div>

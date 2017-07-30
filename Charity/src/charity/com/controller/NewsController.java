@@ -21,6 +21,7 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
+import java.util.List;
 import java.util.Map;
 
 /**
@@ -38,7 +39,7 @@ public class NewsController {
 
     private static final int maxNewsPerPage = 10;
 
-    @RequestMapping(value = "/page/{id}", method = RequestMethod.GET)
+    @RequestMapping(value = "/page/{id}")
     protected ModelAndView ShowOverview(HttpServletRequest request, HttpServletResponse response, @PathVariable("id") Integer page) {
         ModelAndView model = new ModelAndView("news");
         model.addObject("Menu", menusBLO.getMenu());
@@ -63,13 +64,12 @@ public class NewsController {
         return model;
     }
 
-    @RequestMapping(value = "/detail/{id}", method = RequestMethod.GET)
+    @RequestMapping(value = "/detail/{id}")
     protected ModelAndView ShowNewsDetail(HttpServletRequest request, HttpServletResponse response, @PathVariable("id") Integer id) {
         ModelAndView model = new ModelAndView("detail");
         model.addObject("Menu", menusBLO.getMenu());
         News news = newsBLO.getDetailNews(id);
-        String name = news.getName();
-        String content = news.getContent();
+        String toStr = news.toString();
 
         model.addObject("NewsDetail", newsBLO.getDetailNews(id));
         HttpSession session = request.getSession(false);

@@ -83,15 +83,14 @@ public class Messages implements Serializable{
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
 
-        Messages that = (Messages) o;
+        Messages messages = (Messages) o;
 
-        if (id != that.id) return false;
-        if (visitorName != null ? !visitorName.equals(that.visitorName) : that.visitorName != null) return false;
-        if (email != null ? !email.equals(that.email) : that.email != null) return false;
-        if (content != null ? !content.equals(that.content) : that.content != null) return false;
-        if (createdDate != null ? !createdDate.equals(that.createdDate) : that.createdDate != null) return false;
-
-        return true;
+        if (id != messages.id) return false;
+        if (visitorName != null ? !visitorName.equals(messages.visitorName) : messages.visitorName != null)
+            return false;
+        if (email != null ? !email.equals(messages.email) : messages.email != null) return false;
+        if (content != null ? !content.equals(messages.content) : messages.content != null) return false;
+        return createdDate != null ? createdDate.equals(messages.createdDate) : messages.createdDate == null;
     }
 
     @Override

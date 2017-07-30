@@ -35,7 +35,7 @@ public class LoadPageController {
     @Autowired
     PhotosBLO photosBLO;
 
-    @RequestMapping(value = "/home", method = RequestMethod.GET)
+    @RequestMapping(value = "/home")
     protected ModelAndView ShowHome(HttpServletRequest request, HttpServletResponse response) {
         ModelAndView model = new ModelAndView("/home");
         model.addObject("Menu", menusBLO.getMenu());
@@ -51,7 +51,7 @@ public class LoadPageController {
         return model;
     }
 
-    @RequestMapping(value = "/about", method = RequestMethod.GET)
+    @RequestMapping(value = "/about")
     protected ModelAndView ShowAbout(HttpServletRequest request, HttpServletResponse response) {
         ModelAndView model = new ModelAndView("/about");
         model.addObject("Menu", menusBLO.getMenu());
@@ -66,7 +66,7 @@ public class LoadPageController {
         return model;
     }
 
-    @RequestMapping(value = "/photo", method = RequestMethod.GET)
+    @RequestMapping(value = "/photo")
     protected ModelAndView ShowPhoto(HttpServletRequest request, HttpServletResponse response) {
         ModelAndView model = new ModelAndView("/photo");
         model.addObject("Menu", menusBLO.getMenu());
@@ -81,7 +81,7 @@ public class LoadPageController {
         return model;
     }
 
-    @RequestMapping(value = "/help", method = RequestMethod.GET)
+    @RequestMapping(value = "/help")
     protected ModelAndView ShowHelp(HttpServletRequest request, HttpServletResponse response) {
         ModelAndView model = new ModelAndView("/help");
         model.addObject("Menu", menusBLO.getMenu());
@@ -96,7 +96,7 @@ public class LoadPageController {
         return model;
     }
 
-    @RequestMapping(value = "/contact", method = RequestMethod.GET)
+    @RequestMapping(value = "/contact")
     protected ModelAndView ShowContact(HttpServletRequest request, HttpServletResponse response) {
         ModelAndView model = new ModelAndView("/contact");
         model.addObject("Menu", menusBLO.getMenu());
