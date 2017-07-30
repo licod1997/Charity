@@ -18,19 +18,17 @@ import java.util.Map;
  * Created by Notebook on 28-Jul-17.
  */
 @Controller
-public class UpdateDatabaseController {
+public class MessageController {
     @Autowired
     MessagesBLO messagesBLO;
 
     @RequestMapping(value = "/message")
-    protected ModelAndView InsertMessage(@RequestParam Map<String, String> requestParams) {
-        ModelAndView model = new ModelAndView("forward:/help");
-        String name = requestParams.get("author[name]");
-        String mail = requestParams.get("author[email]");
-        String text = requestParams.get("text");
-        if (name != null && mail != null && text != null
-                && name.length() <= 256 && mail.length() <= 256 && text.length() <= 4000
-                && name.length() >= 1 && mail.length() >= 1 && text.length() >= 1
+    protected ModelAndView doGet_message(@RequestParam(value = "author[name]", defaultValue = "") String name,
+                                         @RequestParam(value = "author[email]", defaultValue = "") String mail,
+                                         @RequestParam(value = "text", defaultValue = "") String text,
+                                         ModelAndView model) {
+        if (name.length() <= 256 && mail.length() <= 256 && text.length() <= 4000
+                && !name.isEmpty() && !mail.isEmpty() && !text.isEmpty()
                 && mail.matches("[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?")) {
             messagesBLO.persist(new Messages(name, mail, text, new Date()));
             model.addObject("Success", "Your message has been sent!");
