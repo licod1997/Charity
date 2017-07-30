@@ -162,6 +162,7 @@ Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh 
                                             <div class="content">
                                                 <p><span>${entry.content}</span></p>
                                             </div>
+                                            ${entry.content}
                                         </div>
                                     </div>
                                 </div>

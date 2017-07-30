@@ -111,55 +111,5 @@ public class LoadPageController {
         return model;
     }
 
-    private static final int maxNewsPerPage = 10;
 
-    @RequestMapping(value = "/news", method = RequestMethod.GET)
-    protected ModelAndView ShowOverview(HttpServletRequest request, HttpServletResponse response, @RequestParam Map<String, String> requestPram) {
-        ModelAndView model = new ModelAndView("news");
-        model.addObject("Menu", menusBLO.getMenu());
-        int page = 1;
-        try {
-            page = Integer.parseInt(requestPram.get("page"));
-        } catch (Exception e) {
-        }
-        Double totalPages = Math.ceil(Double.parseDouble(String.valueOf(newsBLO.getTotalNews())) / (1.0 * maxNewsPerPage));
-        int parsedTotalPages = totalPages.intValue();
-        if (page < 1) {
-            page = 1;
-        }
-        if (page > parsedTotalPages) {
-            page = parsedTotalPages;
-        }
-        model.addObject("News", newsBLO.getLatestNews(page, maxNewsPerPage));
-        model.addObject("CurrentPage", page);
-        model.addObject("TotalPages", parsedTotalPages);
-        HttpSession session = request.getSession(false);
-        if (session == null) {
-            session = request.getSession(true);
-            session.setMaxInactiveInterval(20 * 60);
-            visitorCounterBLO.update();
-        }
-        model.addObject("Counter", visitorCounterBLO.getCounter());
-        return model;
-    }
-
-    @RequestMapping(value = "/detail", method = RequestMethod.GET)
-    protected ModelAndView ShowNewsDetail(HttpServletRequest request, HttpServletResponse response, @RequestParam Map<String, String> requestPram) {
-        ModelAndView model = new ModelAndView("detail");
-        model.addObject("Menu", menusBLO.getMenu());
-        int id = 0;
-        try {
-            id = Integer.parseInt(requestPram.get("id"));
-        } catch (Exception e) {
-        }
-        model.addObject("NewsDetail", newsBLO.getDetailNews(id));
-        HttpSession session = request.getSession(false);
-        if (session == null) {
-            session = request.getSession(true);
-            session.setMaxInactiveInterval(20 * 60);
-            visitorCounterBLO.update();
-        }
-        model.addObject("Counter", visitorCounterBLO.getCounter());
-        return model;
-    }
 }
