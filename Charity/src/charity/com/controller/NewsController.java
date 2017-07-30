@@ -37,17 +37,6 @@ public class NewsController {
 
     private static final int maxNewsPerPage = 10;
 
-    @Configuration
-    @EnableWebMvc
-    public class MvcConfig extends WebMvcConfigurerAdapter {
-        @Override
-        public void addResourceHandlers(ResourceHandlerRegistry registry) {
-            registry
-                    .addResourceHandler("/**")
-                    .addResourceLocations("/");
-        }
-    }
-
     @RequestMapping(value = "/page/{id}", method = RequestMethod.GET)
     protected ModelAndView ShowOverview(HttpServletRequest request, HttpServletResponse response, @PathVariable("id") Integer page) {
         ModelAndView model = new ModelAndView("news");

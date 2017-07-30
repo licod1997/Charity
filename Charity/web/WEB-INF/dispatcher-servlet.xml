@@ -17,8 +17,11 @@
        http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util-4.0.xsd" >
 
 
+    <bean class="org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping"/>
+    <bean class="org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter"/>
+    <bean class="org.springframework.web.servlet.mvc.support.ControllerBeanNameHandlerMapping"/>
 
-    <mvc:resources mapping="/resources/**" location="/WEB-INF/resources/" />
+    <mvc:resources mapping="/resources/**" location="/WEB-INF/resources/" cache-period="5000"/>
 
     <bean id="viewResolver"
           class="org.springframework.web.servlet.view.InternalResourceViewResolver"
