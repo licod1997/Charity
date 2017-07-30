@@ -187,8 +187,12 @@ Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit
 
                                             <div class="row-fluid">
                                                 <div class="span12">
-                                                    <div class="pull-right" id="return<"
-                                                    <font id="returnMessage" class="pull-right" color="red"></font>
+                                                        <c:if test="${not empty Success}">
+                                                            <font color="green"${Success}</font>
+                                                        </c:if>
+                                                        <c:if test="${not empty Error}">
+                                                            <font color="red">${Error}</font>
+                                                        </c:if>
                                                     <button class="btn btn-primary pull-right" type="submit"
                                                             data-default="Send - Click here"
                                                             data-progress="&lt;i class=&#39;icon-spin icon-spinner&#39;&gt;&lt;/i&gt; Sending"
@@ -198,9 +202,7 @@ Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit
                                                     </button>
                                                 </div>
                                             </div>
-
                                         </fieldset>
-
                                     </form>
                                     <script type="text/javascript">
 
