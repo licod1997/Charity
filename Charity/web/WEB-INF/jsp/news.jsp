@@ -154,7 +154,7 @@ Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh 
                                                                                         pattern="dd-MMMM-yyyy"/> </span>
                                             </dt>
                                             <dd>
-                                                <h4><a style="text-decoration: none;" href="/news/detail/${entry.id}">${entry.name}</a></h4>
+                                                <h4><a style="text-decoration: none;" href="/news/${entry.id}">${entry.name}</a></h4>
 
                                                 <p>${entry.entry}</p>
                                             </dd>
@@ -192,9 +192,9 @@ Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh 
                                             }
                                             function writeHTML(i) {
                                                 if (i === currentPage) {
-                                                    document.write('<li><a rel="nofollow" href="/news/page/' + i + '"><b>' + i + '</b></a></li>')
+                                                    document.write('<li><a rel="nofollow" href="/news?page=' + i + '"><b>' + i + '</b></a></li>')
                                                 } else {
-                                                    document.write('<li><a rel="nofollow" href="/news/page/' + i + '">' + i + '</a></li>')
+                                                    document.write('<li><a rel="nofollow" href="/news?page=' + i + '">' + i + '</a></li>')
                                                 }
                                             }
                                         </script>

@@ -37,10 +37,19 @@ public class NewsController {
     @Autowired
     VisitorCounterBLO visitorCounterBLO;
 
+    private void viewCount(HttpServletRequest request){
+        HttpSession session = request.getSession(false);
+        if (session == null) {
+            session = request.getSession(true);
+            session.setMaxInactiveInterval(20 * 60);
+            visitorCounterBLO.update();
+        }
+    }
+
     private static final int maxNewsPerPage = 10;
 
-    @RequestMapping(value = "/page/{id}")
-    protected ModelAndView ShowOverview(HttpServletRequest request, HttpServletResponse response, @PathVariable("id") Integer page) {
+    @RequestMapping(value = "")
+    protected ModelAndView doGet_page(HttpServletRequest request, HttpServletResponse response, @RequestParam(value = "page", defaultValue = "1") Integer page) {
         ModelAndView model = new ModelAndView("news");
         model.addObject("Menu", menusBLO.getMenu());
         Double totalPages = Math.ceil(Double.parseDouble(String.valueOf(newsBLO.getTotalNews())) / (1.0 * maxNewsPerPage));
@@ -54,28 +63,16 @@ public class NewsController {
         model.addObject("News", newsBLO.getLatestNews(page, maxNewsPerPage));
         model.addObject("CurrentPage", page);
         model.addObject("TotalPages", parsedTotalPages);
-        HttpSession session = request.getSession(false);
-        if (session == null) {
-            session = request.getSession(true);
-            session.setMaxInactiveInterval(20 * 60);
-            visitorCounterBLO.update();
-        }
         model.addObject("Counter", visitorCounterBLO.getCounter());
         return model;
     }
 
-    @RequestMapping(value = "/detail/{id}")
-    protected ModelAndView ShowNewsDetail(HttpServletRequest request, HttpServletResponse response, @PathVariable("id") Integer id) {
-        ModelAndView model = new ModelAndView("detail");
+    @RequestMapping(value = "/{id}")
+    protected ModelAndView ShowNewsDetail(HttpServletRequest request, ModelAndView model, @PathVariable("id") Integer id) {
+        model.setViewName("detail");
+        viewCount(request);
         model.addObject("Menu", menusBLO.getMenu());
         model.addObject("NewsDetail", newsBLO.getDetailNews(id));
-        String tmp = newsBLO.getDetailNews(id).toString();
-        HttpSession session = request.getSession(false);
-        if (session == null) {
-            session = request.getSession(true);
-            session.setMaxInactiveInterval(20 * 60);
-            visitorCounterBLO.update();
-        }
         model.addObject("Counter", visitorCounterBLO.getCounter());
         return model;
     }

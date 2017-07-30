@@ -47,7 +47,7 @@ public class LoadPageController {
 
     @GetMapping(value = "/home")
     protected ModelAndView doGet_home(HttpServletRequest request, ModelAndView model) {
-        model.setViewName("/home");
+        model.setViewName("home");
         viewCount(request);
         model.addObject("Menu", menusBLO.getMenu());
         model.addObject("Home", pageBLO.getContent("Home"));
@@ -58,7 +58,7 @@ public class LoadPageController {
 
     @RequestMapping(value = "/about")
     protected ModelAndView doGet_about(HttpServletRequest request, ModelAndView model) {
-        model.setViewName("/about");
+        model.setViewName("about");
         viewCount(request);
         model.addObject("Menu", menusBLO.getMenu());
         model.addObject("About", pageBLO.getContent("About"));
@@ -68,7 +68,7 @@ public class LoadPageController {
 
     @RequestMapping(value = "/photo")
     protected ModelAndView doGet_photo(HttpServletRequest request, ModelAndView model) {
-        model.setViewName("/photo");
+        model.setViewName("photo");
         viewCount(request);
         model.addObject("Menu", menusBLO.getMenu());
         model.addObject("Photo", photosBLO.getNewestPhotos());
@@ -78,7 +78,7 @@ public class LoadPageController {
 
     @RequestMapping(value = "/help")
     protected ModelAndView doGet_help(HttpServletRequest request, ModelAndView model) {
-        model.setViewName("/help");
+        model.setViewName("help");
         viewCount(request);
         model.addObject("Menu", menusBLO.getMenu());
         model.addObject("Help", pageBLO.getContent("Help"));
@@ -88,7 +88,7 @@ public class LoadPageController {
 
     @RequestMapping(value = "/contact")
     protected ModelAndView doGet_contact(HttpServletRequest request, ModelAndView model) {
-        model.setViewName("/contact");
+        model.setViewName("contact");
         viewCount(request);
         model.addObject("Menu", menusBLO.getMenu());
         model.addObject("Contact", pageBLO.getContent("Contact"));
