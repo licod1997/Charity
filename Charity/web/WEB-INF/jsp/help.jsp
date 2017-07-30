@@ -154,12 +154,7 @@ Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit
                                         <button type="button" class="close">×</button>
                                     </div>
                                     <p>Write your message here. Fill out the form:</p>
-                                    <script language="javascript" type="text/javascript">
-                                        function submitForm(){
-                                            document.login.submit();
-                                        }
-                                    </script>
-                                    <form action="/message">
+                                    <form action="message">
 
                                         <fieldset>
 
@@ -192,19 +187,13 @@ Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit
 
                                             <div class="row-fluid">
                                                 <div class="span12">
-                                                    <c:set var="responeError" value="${Error}"/>
-                                                    <c:set var="responeSuccess" value="${Success}"/>
-                                                    <c:if test="${not empty responeError}">
-                                                        <font color="red">${responeError}</font>
-                                                    </c:if>
-                                                    <c:if test="${not empty responeSuccess}">
-                                                        <font color="green">${responeSuccess}</font>
-                                                    </c:if>
+                                                    <div class="pull-right" id="return<"
+                                                    <font id="returnMessage" class="pull-right" color="red"></font>
                                                     <button class="btn btn-primary pull-right" type="submit"
                                                             data-default="Send - Click here"
                                                             data-progress="&lt;i class=&#39;icon-spin icon-spinner&#39;&gt;&lt;/i&gt; Sending"
                                                             data-error="Send - Click here"
-                                                            data-success="&lt;i class=&#39;icon-ok&#39;&gt;&lt;/i&gt; Sent" onclick="submitForm()">
+                                                            data-success="&lt;i class=&#39;icon-ok&#39;&gt;&lt;/i&gt; Sent">
                                                         Send - Click here
                                                     </button>
                                                 </div>
@@ -349,7 +338,8 @@ Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit
         google_custom_params = window.google_tag_params, google_remarketing_only = !0;</script>
     <script type="text/javascript" src="/resources/How to Help_files/conversion.js.download"></script>
     <iframe name="google_conversion_frame" title="Google conversion frame" width="300" height="13"
-            src="/resources/How to Help_files/saved_resource.html" frameborder="0" marginwidth="0" marginheight="0" vspace="0"
+            src="/resources/How to Help_files/saved_resource.html" frameborder="0" marginwidth="0" marginheight="0"
+            vspace="0"
             hspace="0" allowtransparency="true" scrolling="no"></iframe>
     <noscript></noscript>
 </div>
