@@ -154,7 +154,7 @@ Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit
                                         <button type="button" class="close">×</button>
                                     </div>
                                     <p>Write your message here. Fill out the form:</p>
-                                    <form action="message">
+                                    <form action="message" onsubmit="return isValidForm(this)">
 
                                         <fieldset>
 
@@ -187,12 +187,26 @@ Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit
 
                                             <div class="row-fluid">
                                                 <div class="span12">
-                                                        <c:if test="${not empty Success}">
-                                                            <font color="green"${Success}</font>
-                                                        </c:if>
-                                                        <c:if test="${not empty Error}">
-                                                            <font color="red">${Error}</font>
-                                                        </c:if>
+                                                    <div class="pull-right" id="returnMessage" ">
+                                                        <script type="text/javascript">
+                                                            function isValidForm(form){
+                                                                var name = document.getElementsByName("author[name]")[0].value;
+                                                                var mail = document.getElementsByName("author[email]")[0].value;
+                                                                var text = document.getElementsByName("text")[0].value;
+                                                                var patt = new RegExp("[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?");
+                                                                if (name.length <= 256 && mail.length <= 256 && text.length <= 4000
+                                                                    && name.length >= 1 && mail.length >= 1 && text.length >= 1
+                                                                    && patt.test(mail)) {
+                                                                    form.submit();
+                                                                    return true;
+                                                                } else {
+                                                                    document.getElementById("returnMessage").innerHTML = "<font color='red'>Your message cannot be sent!</font>";
+                                                                    return false;
+                                                                }
+                                                            }
+                                                        </script>
+                                                    </div>
+                                                    <br/>
                                                     <button class="btn btn-primary pull-right" type="submit"
                                                             data-default="Send - Click here"
                                                             data-progress="&lt;i class=&#39;icon-spin icon-spinner&#39;&gt;&lt;/i&gt; Sending"

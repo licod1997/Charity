@@ -26,15 +26,12 @@ public class MessageController {
     protected ModelAndView doGet_message(@RequestParam(value = "author[name]", defaultValue = "") String name,
                                          @RequestParam(value = "author[email]", defaultValue = "") String mail,
                                          @RequestParam(value = "text", defaultValue = "") String text,
-                                         ModelAndView model) {
+                                         ModelAndView model, HttpServletRequest request) {
         model.setViewName("forward:/help");
         if (name.length() <= 256 && mail.length() <= 256 && text.length() <= 4000
                 && !name.isEmpty() && !mail.isEmpty() && !text.isEmpty()
                 && mail.matches("[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?")) {
             messagesBLO.persist(new Messages(name, mail, text, new Date()));
-            model.addObject("Success", "Your message has been sent!");
-        } else {
-            model.addObject("Error", "Your message cannot be sent!");
         }
         return model;
     }
