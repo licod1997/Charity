@@ -70,10 +70,9 @@ public class NewsController {
     protected ModelAndView ShowNewsDetail(HttpServletRequest request, ModelAndView model,
                                           @PathVariable("id") String idStr) {
         News news;
-        int id;
 
         try {
-            id = Integer.parseInt(idStr);   //parse value from param if possible else the value is 0
+            int id = Integer.parseInt(idStr);   //parse value from param if possible else the value is 0
             news = newsBLO.getDetailNews(id);
         } catch (Exception e) {
             news = new News();
