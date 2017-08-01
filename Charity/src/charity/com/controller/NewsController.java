@@ -70,7 +70,7 @@ public class NewsController {
     protected ModelAndView ShowNewsDetail(HttpServletRequest request, ModelAndView model,
                                           @PathVariable("id") String idStr) {
         News news;
-        int id = 0; //default id value
+        int id;
 
         try {
             id = Integer.parseInt(idStr);   //parse value from param if possible else the value is 0
