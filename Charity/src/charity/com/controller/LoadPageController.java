@@ -33,15 +33,15 @@ public class LoadPageController {
         HttpSession session = request.getSession(false);
         if (session == null) {
             session = request.getSession(true);
-            session.setMaxInactiveInterval(20 * 60);
-            visitorCounterBLO.update();
+            session.setMaxInactiveInterval(20 * 60);    //set session for 20 mins
+            visitorCounterBLO.update(); //update visitor counter in database
         }
     }
 
     private void defaultPageContent(ModelAndView model, String name){
-        model.addObject("Menu", menusBLO.getMenu());    //load menu bar
-        model.addObject(name, pageBLO.getContent(name));  //load page content
-        model.addObject("Counter", visitorCounterBLO.getCounter()); //load visitor counter
+        model.addObject("Menu", menusBLO.getMenu());                   //load menu bar
+        model.addObject(name, pageBLO.getContent(name));                            //load page content
+        model.addObject("Counter", visitorCounterBLO.getCounter());    //load visitor counter
     }
 
     @GetMapping(value = "/home")
@@ -65,9 +65,9 @@ public class LoadPageController {
     protected ModelAndView doGet_photo(HttpServletRequest request, ModelAndView model) {
         model.setViewName("photo");
         viewCount(request);
-        model.addObject("Menu", menusBLO.getMenu());    //load menu bar
-        model.addObject("Photo", photosBLO.getNewestPhotos(9));  //load content
-        model.addObject("Counter", visitorCounterBLO.getCounter()); //load visitor counter
+        model.addObject("Menu", menusBLO.getMenu());                    //load menu bar
+        model.addObject("Photo", photosBLO.getNewestPhotos(9));   //load 9 photos
+        model.addObject("Counter", visitorCounterBLO.getCounter());     //load visitor counter
         return model;
     }
 

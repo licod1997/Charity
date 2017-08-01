@@ -3,10 +3,7 @@ package charity.com.service.news;
 import com.sun.org.apache.bcel.internal.generic.NEW;
 import org.springframework.stereotype.Service;
 
-import javax.persistence.EntityManager;
-import javax.persistence.EntityManagerFactory;
-import javax.persistence.Persistence;
-import javax.persistence.Query;
+import javax.persistence.*;
 import java.io.Serializable;
 import java.util.List;
 import java.util.logging.Level;
@@ -41,14 +38,14 @@ public class NewsBLO implements Serializable {
         return query.getResultList();
     }
 
-    public Object getTotalNews() {
+    public Object getTotalNews() throws NoResultException {
         EntityManager em = emf.createEntityManager();
         String jpql = "select count(*) from News where Status = 1";
         Query query = em.createNativeQuery(jpql);
         return query.getSingleResult();
     }
 
-    public News getDetailNews(int id) {
+    public News getDetailNews(int id) throws NoResultException {
         EntityManager em = emf.createEntityManager();
         String jpql = "select t.ID, t.Name, t.CreatedDate from News t where t.ID = " + id + " and t.Status = 1";    //this return t.Content = null, need optimizing
         Query query = em.createNativeQuery(jpql, News.class);

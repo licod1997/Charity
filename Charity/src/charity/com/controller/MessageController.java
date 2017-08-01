@@ -23,7 +23,7 @@ public class MessageController {
     protected ModelAndView doGet_message(@RequestParam(value = "author[name]", defaultValue = "") String name,
                                          @RequestParam(value = "author[email]", defaultValue = "") String mail,
                                          @RequestParam(value = "text", defaultValue = "") String text,
-                                         ModelAndView model, HttpServletRequest request) {
+                                         ModelAndView model) {
         model.setViewName("forward:/help");
         if (name.length() <= 256 && mail.length() <= 256 && text.length() <= 4000
                 && !name.isEmpty() && !mail.isEmpty() && !text.isEmpty()
