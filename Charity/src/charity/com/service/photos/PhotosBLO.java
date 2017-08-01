@@ -30,9 +30,9 @@ public class PhotosBLO implements Serializable {
         }
     }
 
-    public List getNewestPhotos() {
+    public List getNewestPhotos(int rows) {
         EntityManager em = emf.createEntityManager();
-        String jpql = "select top 9 Image from Photos t where t.Status = 1 order by t.CreatedDate desc";
+        String jpql = "select top " + rows + " Image from Photos t where t.Status = 1 order by t.CreatedDate desc";
         Query query = em.createNativeQuery(jpql);
         return query.getResultList();
     }

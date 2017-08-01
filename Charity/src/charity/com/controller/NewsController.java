@@ -5,6 +5,7 @@ import charity.com.service.news.NewsBLO;
 import charity.com.service.visitorcounter.VisitorCounterBLO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -38,7 +39,7 @@ public class NewsController {
 
     private static final int maxNewsPerPage = 10;
 
-    @RequestMapping(value = "")
+    @GetMapping(value = "")
     protected ModelAndView doGet_page(HttpServletRequest request, HttpServletResponse response, @RequestParam(value = "page", defaultValue = "1") Integer page) {
         ModelAndView model = new ModelAndView("news");
         model.addObject("Menu", menusBLO.getMenu());
@@ -57,7 +58,7 @@ public class NewsController {
         return model;
     }
 
-    @RequestMapping(value = "/{id}")
+    @GetMapping(value = "/{id}")
     protected ModelAndView ShowNewsDetail(HttpServletRequest request, ModelAndView model, @PathVariable("id") Integer id) {
         model.setViewName("detail");
         viewCount(request);

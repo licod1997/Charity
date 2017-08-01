@@ -8,7 +8,6 @@ import charity.com.service.visitorcounter.VisitorCounterBLO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 
 import javax.servlet.http.HttpServletRequest;
@@ -39,54 +38,52 @@ public class LoadPageController {
         }
     }
 
+    private void defaultPageContent(ModelAndView model, String name){
+        model.addObject("Menu", menusBLO.getMenu());    //load menu bar
+        model.addObject(name, pageBLO.getContent(name));  //load page content
+        model.addObject("Counter", visitorCounterBLO.getCounter()); //load visitor counter
+    }
+
     @GetMapping(value = "/home")
     protected ModelAndView doGet_home(HttpServletRequest request, ModelAndView model) {
         model.setViewName("home");
-        viewCount(request); //update visitor counter
-        model.addObject("Menu", menusBLO.getMenu());    //load menu bar
-        model.addObject("Home", pageBLO.getContent("Home"));    //load page content
+        viewCount(request);
+        defaultPageContent(model, "Home");
         model.addObject("News", newsBLO.getLatestNews(1, 2));   //load 2 latest news
-        model.addObject("Counter", visitorCounterBLO.getCounter()); //load visitor counter
         return model;
     }
 
-    @RequestMapping(value = "/about")
+    @GetMapping(value = "/about")
     protected ModelAndView doGet_about(HttpServletRequest request, ModelAndView model) {
         model.setViewName("about");
-        viewCount(request); //update visitor counter
-        model.addObject("Menu", menusBLO.getMenu());    //load menu bar
-        model.addObject("About", pageBLO.getContent("About"));  //load page content
-        model.addObject("Counter", visitorCounterBLO.getCounter()); //load visitor counter
+        viewCount(request);
+        defaultPageContent(model,"About");
         return model;
     }
 
-    @RequestMapping(value = "/photo")
+    @GetMapping(value = "/photo")
     protected ModelAndView doGet_photo(HttpServletRequest request, ModelAndView model) {
         model.setViewName("photo");
-        viewCount(request); //update visitor counter
+        viewCount(request);
         model.addObject("Menu", menusBLO.getMenu());    //load menu bar
-        model.addObject("Photo", photosBLO.getNewestPhotos());  //load page content
+        model.addObject("Photo", photosBLO.getNewestPhotos(9));  //load content
         model.addObject("Counter", visitorCounterBLO.getCounter()); //load visitor counter
         return model;
     }
 
-    @RequestMapping(value = "/help")
+    @GetMapping(value = "/help")
     protected ModelAndView doGet_help(HttpServletRequest request, ModelAndView model) {
         model.setViewName("help");
-        viewCount(request); //update visitor counter
-        model.addObject("Menu", menusBLO.getMenu());
-        model.addObject("Help", pageBLO.getContent("Help"));    //load page content
-        model.addObject("Counter", visitorCounterBLO.getCounter()); //load visitor counter
+        viewCount(request);
+        defaultPageContent(model, "Help");
         return model;
     }
 
-    @RequestMapping(value = "/contact")
+    @GetMapping(value = "/contact")
     protected ModelAndView doGet_contact(HttpServletRequest request, ModelAndView model) {
         model.setViewName("contact");
-        viewCount(request); //update visitor counter
-        model.addObject("Menu", menusBLO.getMenu());    //load menu bar
-        model.addObject("Contact", pageBLO.getContent("Contact"));  //load page content
-        model.addObject("Counter", visitorCounterBLO.getCounter()); //load visitor counter
+        viewCount(request);
+        defaultPageContent(model, "Contact");
         return model;
     }
 

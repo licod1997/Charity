@@ -4,7 +4,7 @@ import charity.com.service.messages.Messages;
 import charity.com.service.messages.MessagesBLO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
@@ -19,7 +19,7 @@ public class MessageController {
     @Autowired
     MessagesBLO messagesBLO;
 
-    @RequestMapping(value = "/message")
+    @GetMapping(value = "/message")
     protected ModelAndView doGet_message(@RequestParam(value = "author[name]", defaultValue = "") String name,
                                          @RequestParam(value = "author[email]", defaultValue = "") String mail,
                                          @RequestParam(value = "text", defaultValue = "") String text,
