@@ -187,7 +187,7 @@ Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit
 
                                             <div class="row-fluid">
                                                 <div class="span12">
-                                                    <div class="pull-right" id="returnMessage" ">
+                                                    <div class="pull-right" id="returnMessage">
                                                         <script type="text/javascript">
                                                             function isValidForm(form){
                                                                 var name = document.getElementsByName("author[name]")[0].value;

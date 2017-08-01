@@ -1,28 +1,18 @@
 package charity.com.controller;
 
 import charity.com.service.menus.MenusBLO;
-import charity.com.service.news.News;
 import charity.com.service.news.NewsBLO;
-import charity.com.service.pages.PagesBLO;
-import charity.com.service.photos.PhotosBLO;
 import charity.com.service.visitorcounter.VisitorCounterBLO;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.context.annotation.Configuration;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
-import org.springframework.web.servlet.config.annotation.EnableWebMvc;
-import org.springframework.web.servlet.config.annotation.ResourceHandlerRegistry;
-import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
-import java.util.List;
-import java.util.Map;
 
 /**
  * Created by Notebook on 30-Jul-17.

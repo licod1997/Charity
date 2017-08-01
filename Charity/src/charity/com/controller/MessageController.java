@@ -5,14 +5,11 @@ import charity.com.service.messages.MessagesBLO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
 import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
 import java.util.Date;
-import java.util.Map;
 
 /**
  * Created by Notebook on 28-Jul-17.
@@ -31,7 +28,7 @@ public class MessageController {
         if (name.length() <= 256 && mail.length() <= 256 && text.length() <= 4000
                 && !name.isEmpty() && !mail.isEmpty() && !text.isEmpty()
                 && mail.matches("[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?")) {
-            messagesBLO.persist(new Messages(name, mail, text, new Date()));
+            messagesBLO.persist(new Messages(name, mail, text, new Date()));    //insert new message into database
         }
         return model;
     }
