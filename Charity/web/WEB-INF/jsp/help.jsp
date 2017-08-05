@@ -29,6 +29,8 @@ Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit
     <meta property="og:type" content="website">
     <meta name="robots" content="nofollow">
 
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="description" content="Children&#39;s Charity - http://us-123charity.simplesite.com/">
@@ -154,7 +156,7 @@ Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit
                                         <button type="button" class="close">×</button>
                                     </div>
                                     <p>Write your message here. Fill out the form:</p>
-                                    <form action="message" onsubmit="return isValidForm(this)">
+                                    <form>
 
                                         <fieldset>
 
@@ -187,26 +189,7 @@ Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit
 
                                             <div class="row-fluid">
                                                 <div class="span12">
-                                                    <div class="pull-right" id="returnMessage">
-                                                        <script type="text/javascript">
-                                                            function isValidForm(form){
-                                                                var name = document.getElementsByName("author[name]")[0].value;
-                                                                var mail = document.getElementsByName("author[email]")[0].value;
-                                                                var text = document.getElementsByName("text")[0].value;
-                                                                var patt = new RegExp("[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?");
-                                                                if (name.length <= 256 && mail.length <= 256 && text.length <= 4000
-                                                                    && name.length >= 1 && mail.length >= 1 && text.length >= 1
-                                                                    && patt.test(mail)) {
-                                                                    form.submit();
-                                                                    return true;
-                                                                } else {
-                                                                    document.getElementById("returnMessage").innerHTML = "<font color='red'>Your message cannot be sent!</font>";
-                                                                    return false;
-                                                                }
-                                                            }
-                                                        </script>
-                                                    </div>
-                                                    <br/>
+                                                    <p class="text-right" id="returnMessageText"></p>
                                                     <button class="btn btn-primary pull-right" type="submit"
                                                             data-default="Send - Click here"
                                                             data-progress="&lt;i class=&#39;icon-spin icon-spinner&#39;&gt;&lt;/i&gt; Sending"
@@ -218,6 +201,33 @@ Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit
                                             </div>
                                         </fieldset>
                                     </form>
+
+                                    <script type="text/javascript">
+                                        $(document).ready(function () {
+                                            $("[type='submit']").click(function (e) {
+                                                var name = $("[name='author[name]']").val();
+                                                var email = $("[name='author[email]']").val();
+                                                var text = $("[name='text']").val();
+                                                var pattern = new RegExp("[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?");
+                                                if (name.length <= 256 && email.length <= 256 && text.length <= 4000
+                                                    && name.length >= 1 && email.length >= 1 && text.length >= 1
+                                                    && pattern.test(email)) {
+                                                    $.ajax({
+                                                        type: "POST",
+                                                        url: "message",
+                                                        data: $("form").serialize()
+                                                    });
+                                                    $("[name='author[name]']").val("");
+                                                    $("[name='author[email]']").val("");
+                                                    $("[name='text']").val("");
+                                                    $("#returnMessageText").text("Your message has been sent!").attr("class", "text-right").css({"color": "#3c763d"});
+                                                } else {
+                                                    $("#returnMessageText").text("Your message has not been sent!").attr("class", "text-right").css({"color": "#a94442"});
+                                                }
+                                                e.preventDefault();
+                                            });
+                                        });
+                                    </script>
                                     <script type="text/javascript">
 
                                         $('#contactFormMessageText').blur(function () {

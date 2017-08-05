@@ -1,9 +1,11 @@
 package charity.com.service.photos;
 
-import charity.com.service.visitorcounter.VisitorCounter;
 import org.springframework.stereotype.Service;
 
-import javax.persistence.*;
+import javax.persistence.EntityManager;
+import javax.persistence.EntityManagerFactory;
+import javax.persistence.Persistence;
+import javax.persistence.Query;
 import java.io.Serializable;
 import java.util.List;
 import java.util.logging.Level;

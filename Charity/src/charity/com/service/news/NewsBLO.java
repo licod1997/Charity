@@ -1,6 +1,5 @@
 package charity.com.service.news;
 
-import com.sun.org.apache.bcel.internal.generic.NEW;
 import org.springframework.stereotype.Service;
 
 import javax.persistence.*;

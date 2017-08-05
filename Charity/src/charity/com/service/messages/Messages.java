@@ -4,7 +4,6 @@ import org.springframework.stereotype.Service;
 
 import javax.persistence.*;
 import java.io.Serializable;
-import java.sql.Timestamp;
 import java.util.Date;
 
 /**

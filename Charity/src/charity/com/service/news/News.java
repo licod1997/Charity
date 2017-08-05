@@ -7,10 +7,9 @@ package charity.com.service.news;
 
 import org.springframework.stereotype.Service;
 
+import javax.persistence.*;
 import java.io.Serializable;
 import java.util.Date;
-import javax.persistence.*;
-import javax.xml.bind.annotation.XmlRootElement;
 
 /**
  *
