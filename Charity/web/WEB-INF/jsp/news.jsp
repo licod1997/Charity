@@ -29,6 +29,8 @@ Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh 
     <meta property="og:type" content="website">
     <meta name="robots" content="nofollow">
 
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="description" content="Children&#39;s Charity - http://us-123charity.simplesite.com/">
@@ -161,44 +163,43 @@ Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh 
                                         </c:forEach>
                                     </dl>
                                     <ul class="pager">
-                                        <script type="text/javascript">
-                                            var currentPage = parseInt('<c:out value="${CurrentPage}"/>');
-                                            var maxPage = parseInt('<c:out value="${TotalPages}"/>');
-                                            browsePage();
-                                            function browsePage() {
-                                                if (maxPage > 4) {
-                                                    if (currentPage - 2 < 2) {
-                                                        for (var i = 1; i <= 5; i++) {
-                                                            writeHTML(i);
-                                                        }
-                                                        return;
-                                                    } else if (currentPage + 2 > maxPage - 1) {
-                                                        for (var i = maxPage - 4; i <= maxPage; i++) {
-                                                            writeHTML(i);
-                                                        }
-                                                        return;
-                                                    } else {
-                                                        for (var i = currentPage - 2; i <= currentPage + 2; i++) {
-                                                            writeHTML(i);
-                                                        }
-                                                        return;
-                                                    }
-                                                }
-                                                if (maxPage <= 4) {
-                                                    for (var i = 1; i <= maxPage; i++) {
+                                    </ul>
+                                    <script type="text/javascript">
+                                        var currentPage = parseInt('<c:out value="${CurrentPage}"/>');
+                                        var maxPage = parseInt('<c:out value="${TotalPages}"/>');
+                                        $(document).ready(function () {
+                                            if (maxPage > 4) {
+                                                if (currentPage - 2 < 2) {
+                                                    for (var i = 1; i <= 5; i++) {
                                                         writeHTML(i);
                                                     }
-                                                }
-                                            }
-                                            function writeHTML(i) {
-                                                if (i === currentPage) {
-                                                    document.write('<li><a rel="nofollow" href="/news?page=' + i + '"><b>' + i + '</b></a></li>')
+                                                    return;
+                                                } else if (currentPage + 2 > maxPage - 1) {
+                                                    for (var i = maxPage - 4; i <= maxPage; i++) {
+                                                        writeHTML(i);
+                                                    }
+                                                    return;
                                                 } else {
-                                                    document.write('<li><a rel="nofollow" href="/news?page=' + i + '">' + i + '</a></li>')
+                                                    for (var i = currentPage - 2; i <= currentPage + 2; i++) {
+                                                        writeHTML(i);
+                                                    }
+                                                    return;
                                                 }
                                             }
-                                        </script>
-                                    </ul>
+                                            if (maxPage <= 4) {
+                                                for (var i = 1; i <= maxPage; i++) {
+                                                    writeHTML(i);
+                                                }
+                                            }
+                                        });
+                                        function writeHTML(i) {
+                                            if (i === currentPage) {
+                                                $("ul.pager").append($("<li></li>").html('<a rel="nofollow" href="/news?page=' + i + '"><b>' + i + '</b></a>'));
+                                            } else {
+                                                $("ul.pager").append($("<li></li>").html('<a rel="nofollow" href="/news?page=' + i + '">' + i + '</a>'));
+                                            }
+                                        }
+                                    </script>
                                 </div>
                             </div>
                         </div>

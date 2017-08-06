@@ -30,7 +30,6 @@ Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit
     <meta name="robots" content="nofollow">
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <!-- Latest compiled and minified CSS -->
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -226,12 +225,6 @@ Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit
                                                 $("#returnMessageText").text("Your message has not been sent!").attr("class", "text-right").css({"color": "#a94442"});
                                             }
                                             e.preventDefault();
-                                        });
-
-                                        //not my code
-                                        $('#contactFormMessageText').blur(function () {
-                                            var text = $('#contactFormMessageText').val().trim();
-                                            $('#contactFormMessageText').val(text);
                                         });
                                     </script>
                                 </div>
