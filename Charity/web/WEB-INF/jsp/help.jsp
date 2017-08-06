@@ -30,6 +30,7 @@ Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit
     <meta name="robots" content="nofollow">
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <!-- Latest compiled and minified CSS -->
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -203,38 +204,35 @@ Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit
                                     </form>
 
                                     <script type="text/javascript">
-                                        $(document).ready(function () {
-                                            $("[type='submit']").click(function (e) {
-                                                var name = $("[name='author[name]']").val();
-                                                var email = $("[name='author[email]']").val();
-                                                var text = $("[name='text']").val();
-                                                var pattern = new RegExp("[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?");
-                                                if (name.length <= 256 && email.length <= 256 && text.length <= 4000
-                                                    && name.length >= 1 && email.length >= 1 && text.length >= 1
-                                                    && pattern.test(email)) {
-                                                    $.ajax({
-                                                        type: "POST",
-                                                        url: "message",
-                                                        data: $("form").serialize()
-                                                    });
-                                                    $("[name='author[name]']").val("");
-                                                    $("[name='author[email]']").val("");
-                                                    $("[name='text']").val("");
-                                                    $("#returnMessageText").text("Your message has been sent!").attr("class", "text-right").css({"color": "#3c763d"});
-                                                } else {
-                                                    $("#returnMessageText").text("Your message has not been sent!").attr("class", "text-right").css({"color": "#a94442"});
-                                                }
-                                                e.preventDefault();
-                                            });
+                                        //check valid before sending email
+                                        $("[type='submit']").click(function (e) {
+                                            var name = $("[name='author[name]']").val().trim();
+                                            var email = $("[name='author[email]']").val().trim();
+                                            var text = $("[name='text']").val().trim();
+                                            var pattern = new RegExp("[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?");
+                                            if (name.length <= 256 && email.length <= 256 && text.length <= 4000
+                                                && name.length >= 1 && email.length >= 1 && text.length >= 1
+                                                && pattern.test(email)) {
+                                                $.ajax({
+                                                    type: "POST",
+                                                    url: "message",
+                                                    data: $("form").serialize()
+                                                });
+                                                $("[name='author[name]']").val("");
+                                                $("[name='author[email]']").val("");
+                                                $("[name='text']").val("");
+                                                $("#returnMessageText").text("Your message has been sent!").attr("class", "text-right").css({"color": "#3c763d"});
+                                            } else {
+                                                $("#returnMessageText").text("Your message has not been sent!").attr("class", "text-right").css({"color": "#a94442"});
+                                            }
+                                            e.preventDefault();
                                         });
-                                    </script>
-                                    <script type="text/javascript">
 
+                                        //not my code
                                         $('#contactFormMessageText').blur(function () {
                                             var text = $('#contactFormMessageText').val().trim();
                                             $('#contactFormMessageText').val(text);
                                         });
-
                                     </script>
                                 </div>
                             </div>
