@@ -22,11 +22,11 @@ import javax.servlet.http.HttpSession;
 @RequestMapping(value = "/news")
 public class NewsController {
     @Autowired
-    NewsBLO newsBLO;
+    private NewsBLO newsBLO;
     @Autowired
-    MenusBLO menusBLO;
+    private MenusBLO menusBLO;
     @Autowired
-    VisitorCounterBLO visitorCounterBLO;
+    private VisitorCounterBLO visitorCounterBLO;
 
     private void viewCount(HttpServletRequest request) {
         HttpSession session = request.getSession(false);

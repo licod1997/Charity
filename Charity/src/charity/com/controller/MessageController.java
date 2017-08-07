@@ -16,7 +16,7 @@ import java.util.Date;
 @Controller
 public class MessageController {
     @Autowired
-    MessagesBLO messagesBLO;
+    private MessagesBLO messagesBLO;
 
     @PostMapping(value = "/message")
     protected ModelAndView doPost_message(@RequestParam(value = "author[name]", defaultValue = "") String name,

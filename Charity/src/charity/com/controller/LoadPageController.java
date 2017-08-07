@@ -19,15 +19,15 @@ import javax.servlet.http.HttpSession;
 @Controller
 public class LoadPageController {
     @Autowired
-    PagesBLO pageBLO;
+    private PagesBLO pageBLO;
     @Autowired
-    NewsBLO newsBLO;
+    private NewsBLO newsBLO;
     @Autowired
-    MenusBLO menusBLO;
+    private MenusBLO menusBLO;
     @Autowired
-    VisitorCounterBLO visitorCounterBLO;
+    private VisitorCounterBLO visitorCounterBLO;
     @Autowired
-    PhotosBLO photosBLO;
+    private PhotosBLO photosBLO;
 
     private void viewCount(HttpServletRequest request){
         HttpSession session = request.getSession(false);
