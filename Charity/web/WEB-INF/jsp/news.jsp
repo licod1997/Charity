@@ -194,9 +194,9 @@ Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh 
                                         });
                                         function writeHTML(i) {
                                             if (i === currentPage) {
-                                                $("ul.pager").append($("<li></li>").html('<a rel="nofollow" href="/news?page=' + i + '"><b>' + i + '</b></a>'));
+                                                $("ul.pager").append('<li><a rel="nofollow" href="/news?page=' + i + '"><b>' + i + '</b></a></li>');
                                             } else {
-                                                $("ul.pager").append($("<li></li>").html('<a rel="nofollow" href="/news?page=' + i + '">' + i + '</a>'));
+                                                $("ul.pager").append('<li><a rel="nofollow" href="/news?page=' + i + '">' + i + '</a></li>');
                                             }
                                         }
                                     </script>
