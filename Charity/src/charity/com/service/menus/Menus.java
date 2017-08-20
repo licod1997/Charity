@@ -15,6 +15,9 @@ public class Menus implements Serializable{
     private Integer displayOrder;
     private Boolean status;
 
+    public Menus() {
+    }
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "ID", nullable = false)

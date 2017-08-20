@@ -12,6 +12,9 @@ public class VisitorCounter implements Serializable {
     private Integer id;
     private Integer counter;
 
+    public VisitorCounter() {
+    }
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "ID", nullable = false)

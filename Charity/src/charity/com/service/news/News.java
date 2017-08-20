@@ -17,6 +17,9 @@ public class News implements Serializable {
     private Date createdDate;
     private Boolean pageStatus;
 
+    public News() {
+    }
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "ID", nullable = false)

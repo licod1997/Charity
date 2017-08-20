@@ -17,6 +17,9 @@ public class Pages implements Serializable{
     private Date createdDate;
     private Boolean status;
 
+    public Pages() {
+    }
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "ID", nullable = false)

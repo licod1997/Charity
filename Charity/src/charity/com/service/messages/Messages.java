@@ -16,6 +16,16 @@ public class Messages implements Serializable {
     private String content;
     private Date createdDate;
 
+    public Messages() {
+    }
+
+    public Messages(String visitorName, String email, String content, Date createdDate) {
+        this.visitorName = visitorName;
+        this.email = email;
+        this.content = content;
+        this.createdDate = createdDate;
+    }
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "ID", nullable = false)

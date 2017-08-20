@@ -15,6 +15,9 @@ public class Photos implements Serializable{
     private Date createdDate;
     private Boolean status;
 
+    public Photos() {
+    }
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "ID", nullable = false)
