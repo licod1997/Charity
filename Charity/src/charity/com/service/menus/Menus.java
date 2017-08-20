@@ -8,7 +8,7 @@ import java.io.Serializable;
 @Entity
 @Service
 @Table(name = "Menus", catalog = "Charity", schema = "dbo")
-public class Menus implements Serializable{
+public class Menus implements Serializable {
     private Integer id;
     private String name;
     private String url;

@@ -9,7 +9,7 @@ import java.util.Date;
 @Entity
 @Service
 @Table(name = "Photos", catalog = "Charity", schema = "dbo")
-public class Photos implements Serializable{
+public class Photos implements Serializable {
     private Integer id;
     private String image;
     private Date createdDate;

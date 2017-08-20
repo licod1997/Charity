@@ -46,7 +46,7 @@ public class NewsBLO implements Serializable {
 
     public News getDetailNews(int id) throws NoResultException {
         EntityManager em = emf.createEntityManager();
-        String jpql = "select t.ID, t.Name, t.Entry, t.PageStatus, t.CreatedDate, t.PageStatus from News t where t.ID = " + id + " and t.PageStatus = 1";    //this return t.Content = null, need optimizing
+        String jpql = "select * from News t where t.ID = " + id + " and t.PageStatus = 1";    //this return t.Content = null, need optimizing
 //        String jpql = "News.findById";
         Query query = em.createNativeQuery(jpql, News.class);
 //        Query query = em.createNamedQuery(jpql);

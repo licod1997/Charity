@@ -9,7 +9,7 @@ import java.util.Date;
 @Entity
 @Service
 @Table(name = "Pages", catalog = "Charity", schema = "dbo")
-public class Pages implements Serializable{
+public class Pages implements Serializable {
     private Integer id;
     private String name;
     private String content;
