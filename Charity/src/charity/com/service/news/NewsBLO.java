@@ -32,7 +32,7 @@ public class NewsBLO implements Serializable {
     public List getLatestNews(int page, int maxRow) {
         EntityManager em = emf.createEntityManager();
         long limit = maxRow * page;
-        String jpql = "select * from ( select ROW_NUMBER () OVER (ORDER BY t.CreatedDate desc) AS RowNum, t.ID, t.Name, t.Entry, t.CreatedDate from News t where t.PageStatus = 1 ) sub where RowNum >= " + (limit - maxRow + 1) + " and RowNum <= " + limit;
+        String jpql = "select * from ( select ROW_NUMBER () OVER (ORDER BY t.CreatedDate desc) AS RowNum, t.ID, t.Name, t.PageEntry, t.CreatedDate from News t where t.PageStatus = 1 ) sub where RowNum >= " + (limit - maxRow + 1) + " and RowNum <= " + limit;
         Query query = em.createNativeQuery(jpql, News.class);
         return query.getResultList();
     }

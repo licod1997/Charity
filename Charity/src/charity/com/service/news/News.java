@@ -12,7 +12,7 @@ import java.util.Date;
 public class News implements Serializable {
     private Integer id;
     private String name;
-    private String entry;
+    private String pageEntry;
     private String pageContent;
     private Date createdDate;
     private Boolean pageStatus;
@@ -42,13 +42,11 @@ public class News implements Serializable {
     }
 
     @Basic
-    @Column(name = "Entry", nullable = true, length = 256)
-    public String getEntry() {
-        return entry;
-    }
+    @Column(name = "PageEntry", nullable = true, length = 256)
+    public String getPageEntry() { return pageEntry; }
 
-    public void setEntry(String entry) {
-        this.entry = entry;
+    public void setPageEntry(String pageEntry) {
+        this.pageEntry = pageEntry;
     }
 
     @Basic
@@ -102,7 +100,7 @@ public class News implements Serializable {
         return "News{" +
                 "id=" + id +
                 ", name='" + name + '\'' +
-                ", entry='" + entry + '\'' +
+                ", pageEntry='" + pageEntry + '\'' +
                 ", pageContent='" + pageContent + '\'' +
                 ", createdDate=" + createdDate +
                 ", pageStatus=" + pageStatus +
