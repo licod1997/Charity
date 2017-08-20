@@ -66,7 +66,7 @@ Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh 
 
     <script type="text/javascript">var css_simplesite_com_fallback_element = document.getElementById('css_simplesite_com_fallback');
     if (typeof css_simplesite_com_fallback_element !== 'undefined' && css_simplesite_com_fallback_element !== null) {
-        var isVisible = css_simplesite_com_fallback_element.offsetParent !== null
+        var isVisible = css_simplesite_com_fallback_element.offsetParent !== null;
         if (isVisible) {
             var head = document.head, link = document.createElement('link');
 
@@ -160,7 +160,7 @@ Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh 
                                                 </div>
 
                                                 <div class="content">
-                                                    <p>${entry.content}</p>
+                                                    <p>${entry.pageContent}</p>
                                                 </div>
                                             </div>
                                         </div>

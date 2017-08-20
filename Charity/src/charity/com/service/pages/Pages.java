@@ -6,41 +6,30 @@ import javax.persistence.*;
 import java.io.Serializable;
 import java.util.Date;
 
-/**
- * Created by Notebook on 27-Jul-17.
- */
 @Entity
-@Table(name = "Pages", schema = "dbo", catalog = "Charity")
 @Service
-public class Pages implements Serializable {
+@Table(name = "Pages", catalog = "Charity", schema = "dbo")
+public class Pages implements Serializable{
+    private Integer id;
+    private String name;
+    private String content;
+    private Integer displayOrder;
+    private Date createdDate;
+    private Boolean status;
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "ID", nullable = false)
-    private int id;
-    @Basic(optional = false)
-    @Column(name = "Name", nullable = false, length = 256)
-    private String name;
-    @Column(name = "Content", nullable = true, length = 2147483647)
-    private String content;
-    @Column(name = "DisplayOrder", nullable = true)
-    private Integer displayOrder;
-    @Column(name = "CreatedDate", nullable = true)
-    @Temporal(TemporalType.TIMESTAMP)
-    private Date createdDate;
-    @Column(name = "Status", nullable = true)
-    private Boolean status;
-
-    public Pages() {
-    }
-
-    public int getId() {
+    public Integer getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(Integer id) {
         this.id = id;
     }
 
+    @Basic
+    @Column(name = "Name", nullable = false, length = 256)
     public String getName() {
         return name;
     }
@@ -49,6 +38,8 @@ public class Pages implements Serializable {
         this.name = name;
     }
 
+    @Basic
+    @Column(name = "Content", nullable = true, length = 2147483647)
     public String getContent() {
         return content;
     }
@@ -57,6 +48,8 @@ public class Pages implements Serializable {
         this.content = content;
     }
 
+    @Basic
+    @Column(name = "DisplayOrder", nullable = true)
     public Integer getDisplayOrder() {
         return displayOrder;
     }
@@ -65,6 +58,9 @@ public class Pages implements Serializable {
         this.displayOrder = displayOrder;
     }
 
+    @Basic
+    @Temporal(TemporalType.TIMESTAMP)
+    @Column(name = "CreatedDate", nullable = true)
     public Date getCreatedDate() {
         return createdDate;
     }
@@ -73,6 +69,8 @@ public class Pages implements Serializable {
         this.createdDate = createdDate;
     }
 
+    @Basic
+    @Column(name = "Status", nullable = true)
     public Boolean getStatus() {
         return status;
     }
@@ -88,22 +86,23 @@ public class Pages implements Serializable {
 
         Pages pages = (Pages) o;
 
-        if (id != pages.id) return false;
-        if (name != null ? !name.equals(pages.name) : pages.name != null) return false;
-        if (content != null ? !content.equals(pages.content) : pages.content != null) return false;
-        if (displayOrder != null ? !displayOrder.equals(pages.displayOrder) : pages.displayOrder != null) return false;
-        if (createdDate != null ? !createdDate.equals(pages.createdDate) : pages.createdDate != null) return false;
-        return status != null ? status.equals(pages.status) : pages.status == null;
+        return id != null ? id.equals(pages.id) : pages.id == null;
     }
 
     @Override
     public int hashCode() {
-        int result = id;
-        result = 31 * result + (name != null ? name.hashCode() : 0);
-        result = 31 * result + (content != null ? content.hashCode() : 0);
-        result = 31 * result + (displayOrder != null ? displayOrder.hashCode() : 0);
-        result = 31 * result + (createdDate != null ? createdDate.hashCode() : 0);
-        result = 31 * result + (status != null ? status.hashCode() : 0);
-        return result;
+        return id != null ? id.hashCode() : 0;
+    }
+
+    @Override
+    public String toString() {
+        return "Pages{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                ", content='" + content + '\'' +
+                ", displayOrder=" + displayOrder +
+                ", createdDate=" + createdDate +
+                ", status=" + status +
+                '}';
     }
 }

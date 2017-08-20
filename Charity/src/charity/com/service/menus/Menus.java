@@ -5,35 +5,29 @@ import org.springframework.stereotype.Service;
 import javax.persistence.*;
 import java.io.Serializable;
 
-/**
- * Created by Notebook on 27-Jul-17.
- */
 @Entity
-@Table(name = "Menus", schema = "dbo", catalog = "Charity")
 @Service
-public class Menus implements Serializable {
+@Table(name = "Menus", catalog = "Charity", schema = "dbo")
+public class Menus implements Serializable{
+    private Integer id;
+    private String name;
+    private String url;
+    private Integer displayOrder;
+    private Boolean status;
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "ID", nullable = false)
-    private int id;
-    @Column(name = "Name", nullable = false, length = 50)
-    private String name;
-    @Column(name = "URL", nullable = false, length = 256)
-    private String url;
-    @Column(name = "DisplayOrder", nullable = true)
-    private Integer displayOrder;
-    @Column(name = "Status", nullable = true)
-    private Boolean status;
-
-    public int getId() {
+    public Integer getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(Integer id) {
         this.id = id;
     }
 
-
+    @Basic
+    @Column(name = "Name", nullable = false, length = 50)
     public String getName() {
         return name;
     }
@@ -42,6 +36,8 @@ public class Menus implements Serializable {
         this.name = name;
     }
 
+    @Basic
+    @Column(name = "URL", nullable = false, length = 256)
     public String getUrl() {
         return url;
     }
@@ -50,6 +46,8 @@ public class Menus implements Serializable {
         this.url = url;
     }
 
+    @Basic
+    @Column(name = "DisplayOrder", nullable = true)
     public Integer getDisplayOrder() {
         return displayOrder;
     }
@@ -58,6 +56,8 @@ public class Menus implements Serializable {
         this.displayOrder = displayOrder;
     }
 
+    @Basic
+    @Column(name = "Status", nullable = true)
     public Boolean getStatus() {
         return status;
     }
@@ -71,24 +71,24 @@ public class Menus implements Serializable {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
 
-        Menus that = (Menus) o;
+        Menus menus = (Menus) o;
 
-        if (id != that.id) return false;
-        if (name != null ? !name.equals(that.name) : that.name != null) return false;
-        if (url != null ? !url.equals(that.url) : that.url != null) return false;
-        if (displayOrder != null ? !displayOrder.equals(that.displayOrder) : that.displayOrder != null) return false;
-        if (status != null ? !status.equals(that.status) : that.status != null) return false;
-
-        return true;
+        return id != null ? id.equals(menus.id) : menus.id == null;
     }
 
     @Override
     public int hashCode() {
-        int result = id;
-        result = 31 * result + (name != null ? name.hashCode() : 0);
-        result = 31 * result + (url != null ? url.hashCode() : 0);
-        result = 31 * result + (displayOrder != null ? displayOrder.hashCode() : 0);
-        result = 31 * result + (status != null ? status.hashCode() : 0);
-        return result;
+        return id != null ? id.hashCode() : 0;
+    }
+
+    @Override
+    public String toString() {
+        return "Menus{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                ", url='" + url + '\'' +
+                ", displayOrder=" + displayOrder +
+                ", status=" + status +
+                '}';
     }
 }

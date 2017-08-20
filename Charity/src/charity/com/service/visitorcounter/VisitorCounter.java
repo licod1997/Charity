@@ -3,35 +3,33 @@ package charity.com.service.visitorcounter;
 import org.springframework.stereotype.Service;
 
 import javax.persistence.*;
+import java.io.Serializable;
 
-/**
- * Created by Notebook on 27-Jul-17.
- */
 @Entity
-@Table(name = "VisitorCounter", schema = "dbo", catalog = "Charity")
 @Service
-public class VisitorCounter {
-    private int id;
-    private int counter;
+@Table(name = "VisitorCounter", catalog = "Charity", schema = "dbo")
+public class VisitorCounter implements Serializable {
+    private Integer id;
+    private Integer counter;
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "ID", nullable = false)
-    public int getId() {
+    public Integer getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(Integer id) {
         this.id = id;
     }
 
     @Basic
     @Column(name = "Counter", nullable = false)
-    public int getCounter() {
+    public Integer getCounter() {
         return counter;
     }
 
-    public void setCounter(int counter) {
+    public void setCounter(Integer counter) {
         this.counter = counter;
     }
 
@@ -42,16 +40,19 @@ public class VisitorCounter {
 
         VisitorCounter that = (VisitorCounter) o;
 
-        if (id != that.id) return false;
-        if (counter != that.counter) return false;
-
-        return true;
+        return id != null ? id.equals(that.id) : that.id == null;
     }
 
     @Override
     public int hashCode() {
-        int result = id;
-        result = 31 * result + counter;
-        return result;
+        return id != null ? id.hashCode() : 0;
+    }
+
+    @Override
+    public String toString() {
+        return "VisitorCounter{" +
+                "id=" + id +
+                ", counter=" + counter +
+                '}';
     }
 }

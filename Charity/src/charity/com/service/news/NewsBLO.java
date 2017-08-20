@@ -32,26 +32,30 @@ public class NewsBLO implements Serializable {
     public List getLatestNews(int page, int maxRow) {
         EntityManager em = emf.createEntityManager();
         long limit = maxRow * page;
-        String jpql = "select * from ( select ROW_NUMBER () OVER (ORDER BY t.CreatedDate desc) AS RowNum, t.ID, t.Name, t.Entry, t.CreatedDate from News t where t.Status = 1 ) sub where RowNum >= " + (limit - maxRow + 1) + " and RowNum <= " + limit;
+        String jpql = "select * from ( select ROW_NUMBER () OVER (ORDER BY t.CreatedDate desc) AS RowNum, t.ID, t.Name, t.Entry, t.CreatedDate from News t where t.PageStatus = 1 ) sub where RowNum >= " + (limit - maxRow + 1) + " and RowNum <= " + limit;
         Query query = em.createNativeQuery(jpql, News.class);
         return query.getResultList();
     }
 
     public Object getTotalNews() throws NoResultException {
         EntityManager em = emf.createEntityManager();
-        String jpql = "select count(*) from News where Status = 1";
+        String jpql = "select count(*) from News where PageStatus = 1";
         Query query = em.createNativeQuery(jpql);
         return query.getSingleResult();
     }
 
     public News getDetailNews(int id) throws NoResultException {
         EntityManager em = emf.createEntityManager();
-        String jpql = "select t.ID, t.Name, t.CreatedDate from News t where t.ID = " + id + " and t.Status = 1";    //this return t.Content = null, need optimizing
+        String jpql = "select t.ID, t.Name, t.Entry, t.PageStatus, t.CreatedDate, t.PageStatus from News t where t.ID = " + id + " and t.PageStatus = 1";    //this return t.Content = null, need optimizing
+//        String jpql = "News.findById";
         Query query = em.createNativeQuery(jpql, News.class);
+//        Query query = em.createNamedQuery(jpql);
+//        query.setParameter("id", id);
         News news = (News) query.getSingleResult();
-        jpql = "select Content from News t where t.ID = " + id + " and t.Status = 1";   //get the missing Content
-        query = em.createNativeQuery(jpql);
-        news.setContent((String) query.getSingleResult());
+        System.out.println(news);
+//        jpql = "select Content from News t where t.ID = " + id + " and t.Status = 1";   //get the missing Content
+//        query = em.createNativeQuery(jpql);
+//        news.setContent((String) query.getSingleResult());
         return news;
     }
 }

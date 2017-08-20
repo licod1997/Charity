@@ -38,4 +38,13 @@ public class PagesBLO implements Serializable {
         Query query = em.createNativeQuery(jpql);
         return query.getResultList();
     }
+
+    public Pages getContent(){
+        EntityManager em = emf.createEntityManager();
+        int id = 1;
+        String jpql = "select t.ID, t.Name, t.Content, t.DisplayOrder, t.CreatedDate, t.Status from Pages t where t.ID =" + id;
+        Query query = em.createNativeQuery(jpql, Pages.class);
+        System.out.println(query.getSingleResult().toString());
+        return (Pages)query.getSingleResult();
+    }
 }
